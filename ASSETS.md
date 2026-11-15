@@ -11,6 +11,9 @@ Every image and clip on the page comes from the SPARK+ paper or from renders of 
 | `seams.jpg` | Fig. 4, outline guide, rasterized from the vector figure |
 | `cad_agent.jpg` | Fig. 5, CAD agent, rasterized from the vector figure |
 | `joint_search.jpg` | Fig. 6, hinge search, rasterized from the vector figure |
+
+The outline-guide, CAD-agent and hinge-search figures are retained in the repository but are not currently displayed.
+
 ## Results section (`assets/examples/<object>/`)
 
 Objects: wardrobe, chest of drawers, highboy, microwave, triptych, desk lamp, wheelchair, motorbike. These are the objects without ground truth of the paper's qualitative figures (Fig. 8, and Figs. 12 and 13 in the appendix).
@@ -50,10 +53,11 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 | 100 objects with ground truth | Sec. 4, Data |
 | 13 buttons, each on its own prismatic joint (image alternative of the microwave figure) | Sec. 3.1 and App. B.8 |
 | 3.6 mm per turn, three turns, 10.8 mm rise | App. A.8, Fig. 10 |
-| 3.6 to 0.8 mm largest detachment | Fig. 6 caption |
 | 26 components (image alternative of the overview figure) | Fig. 2 |
 | 108 / 108 load in PyBullet; 109 / 113 joints driven through at least 90% of their range in MuJoCo | Sec. 5 and App. C.4 |
 
 ## Other files
 
 `favicon.svg` is a typographic S+ mark.
+
+`assets/fonts/` contains the local Google Sans and Noto Sans files reused from the original SPARK website. No external font service is contacted.

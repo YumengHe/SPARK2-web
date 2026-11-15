@@ -15,18 +15,10 @@
   <a class="skip-link" href="#sc-overview">Skip to content</a>
 <main id="spark-clean">
   <div class="sc-container">
-    <header class="sc-nav"><div class="sc-wordmark">SPARK<span>+</span></div><nav class="sc-links" aria-label="Page sections"><a href="#sc-overview">Overview</a><a href="#sc-method">Method</a><a href="#sc-results">Results</a><a href="#sc-tasks">Tasks</a><a href="#sc-eval">Evaluation</a></nav></header>
+    <header class="sc-nav"><div class="sc-wordmark">SPARK<span>+</span></div></header>
     <section class="sc-hero" aria-labelledby="project-title">
-      <div class="sc-objects">
-        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/wardrobe.jpg" aria-label="Wardrobe by SPARK+: both doors swing open"><source src="assets/clips/wardrobe.mp4" type="video/mp4"></video><figcaption>Open.</figcaption></figure>
-        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/chest.jpg" aria-label="Chest of drawers by SPARK+: the upper left drawer slides out"><source src="assets/clips/chest.mp4" type="video/mp4"></video><figcaption>Slide.</figcaption></figure>
-        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/lamp.jpg" aria-label="Desk lamp by SPARK+: the arm rises and the shade turns"><source src="assets/clips/lamp.mp4" type="video/mp4"></video><figcaption>Articulate.</figcaption></figure>
-        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/clock.jpg" aria-label="Mantel clock by SPARK+: the two hands turn"><source src="assets/clips/clock.mp4" type="video/mp4"></video><figcaption>Rotate.</figcaption></figure>
-      </div>
       <h1 id="project-title"><span class="sc-project-name">SPARK+</span>A Task-Driven Agentic Pipeline for Articulated Objects from a Single Image</h1>
       <p class="sc-authors">Anonymous Authors</p>
-      <p class="sc-subtitle">One image and one task sentence in, a URDF asset out. <br>The look comes from a generated shell, the parts, interiors and joints from CAD.</p>
-      <p class="sc-resources"><span>Paper · coming soon</span><span>Code · coming soon</span></p>
     </section>
   </div>
   <section class="sc-soft-band sc-section" id="sc-overview">
@@ -60,11 +52,6 @@
         <article class="sc-stage" style="--tone:#C58BC0"><div class="sc-stage-no">02</div><h3>Outline guide</h3><p>An image model draws a closed loop around each movable part on a render of the shell; each piece snaps to the nearest strong crease.</p></article>
         <article class="sc-stage" style="--tone:#7FA6CF"><div class="sc-stage-no">03</div><h3>CAD agent</h3><p>One call plans all links as components, which are written in parallel as OpenSCAD, clipped to the shell and repaired over rounds.</p></article>
         <article class="sc-stage" style="--tone:#6FB5AE"><div class="sc-stage-no">04</div><h3>Stitch and joint</h3><p>The shell is cut along the outlines and each piece is joined with its CAD. Joints are placed, searched and limited, then verified and exported as URDF.</p></article>
-      </div>
-      <div class="sc-method-tabs" role="tablist" aria-label="Method details"><button id="sc-tab-seams" type="button" role="tab" aria-selected="true" aria-controls="sc-method-panel" data-method="seams">Outline guide</button><button id="sc-tab-agent" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="agent" tabindex="-1">CAD agent</button><button id="sc-tab-hinges" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="hinges" tabindex="-1">Hinge search</button></div>
-      <div class="sc-method-panel" id="sc-method-panel" role="tabpanel" aria-labelledby="sc-tab-seams" tabindex="0">
-        <div><h3 id="sc-method-title">Find the boundary on the shell.</h3><p id="sc-method-copy">A generated surface rarely has a clean gap between a door and its frame. An image model draws a closed loop around the named part on a render of the shell; the loop is registered to the render and each piece moves to the strongest nearby crease, which gives the seam. Shown on a chest drawer.</p></div>
-        <figure class="sc-method-figure"><img id="sc-method-img" src="assets/figures/seams.jpg" width="1300" height="705" alt="Outline guide on a chest drawer: the drawn loop on the render, and a close-up with the drawn line, the searched band and the refined seam." loading="lazy" decoding="async"></figure>
       </div>
     </section>
     <hr class="sc-rule">
