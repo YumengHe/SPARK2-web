@@ -20,21 +20,23 @@ Open `http://127.0.0.1:8767/`.
 2. Overview: the paper's teaser figure, a shortened abstract and the three contributions.
 3. How SPARK+ differs from image-to-3D generators and agentic CAD methods.
 4. Method: the overview figure, four stages, and tabs for the outline guide, the CAD agent and the hinge search, each with its paper figure.
-5. Results on objects without ground truth: input image, Procedura, Articraft and a SPARK+ motion clip, all eight objects shown together.
-6. Task as input: one car and one microwave under different task sentences.
+5. Results on objects without ground truth: input image and motion clips of Procedura, Articraft and SPARK+, all eight objects shown together.
+6. Task as input: one car and one microwave, one motion clip per task sentence.
 7. Joint types: revolute, prismatic, continuous and helical motion clips.
-8. Evaluation: the qualitative comparison on ground-truth objects.
-9. Simulation: PyBullet loading and MuJoCo end-effector operation.
+8. Evaluation: the qualitative comparison on ground-truth objects, one motion clip per method and object, with its joint error.
+9. Simulation: PyBullet loading and four MuJoCo clips of a fingertip operating a joint.
 
-Without JavaScript every section shows its first state (the wardrobe example and the outline-guide tab), and the clips play from their `autoplay` attributes. With reduced motion requested, clips stay on their poster frame.
+Without JavaScript the method panel shows the outline-guide tab and the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With reduced motion requested, clips stay on their poster frame.
 
 ## Files
 
 - `index.html`: content, section order and image alternatives.
 - `styles.css`: palette, layout and mobile adaptations.
-- `app.js`: object switching in the results section and the method-detail tabs (click, arrow keys, Home, End).
+- `app.js`: plays each clip only while it is on screen; the method-detail tabs (click, arrow keys, Home, End).
 - `assets/figures/`: paper figures as JPEG.
-- `assets/examples/<object>/`: input image and comparison renders of each object in the results section.
-- `assets/clips/`: H.264 clips (silent, looping) and their poster frames.
+- `assets/examples/<object>/`: input image of each object in the results section.
+- `assets/clips/`: H.264 clips (silent, looping) and their poster frames: SPARK+, Procedura and Articraft results, the task rows and the helical joint.
+- `assets/qual/`: clips and input renders of the evaluation grid.
+- `assets/sim/`: MuJoCo clips.
 
 `ASSETS.md` lists where every asset comes from.

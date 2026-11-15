@@ -16,7 +16,7 @@
         if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
       });
     }, { rootMargin: '200px' });
-    Array.prototype.forEach.call(root.querySelectorAll('.sc-results-row video'), function (v) { v.removeAttribute('autoplay'); io.observe(v); });
+    Array.prototype.forEach.call(root.querySelectorAll('video'), function (v) { if (v.closest('.sc-hero')) return; v.removeAttribute('autoplay'); io.observe(v); });
   }
 
   var methods = {

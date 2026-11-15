@@ -11,39 +11,37 @@ Every image and clip on the page comes from the SPARK+ paper or from renders of 
 | `seams.jpg` | Fig. 4, outline guide, rasterized from the vector figure |
 | `cad_agent.jpg` | Fig. 5, CAD agent, rasterized from the vector figure |
 | `joint_search.jpg` | Fig. 6, hinge search, rasterized from the vector figure |
-| `car_tasks.jpg` | Fig. 3, one image, three tasks |
-| `microwave_tasks.jpg` | Fig. 11, one shell, different tasks (App. B.8) |
-| `qual_gt.jpg` | Fig. 7, qualitative results on ground-truth objects of ArticulateArena |
-| `helical.jpg` | Fig. 10, helical joint on a light bulb (App. A.8) |
-| `mujoco_manip.jpg` | Fig. 14, a fingertip operating joints in MuJoCo (App. C.4) |
-
 ## Results section (`assets/examples/<object>/`)
 
 Objects: wardrobe, chest of drawers, highboy, microwave, triptych, desk lamp, wheelchair, motorbike. These are the objects without ground truth of the paper's qualitative figures (Fig. 8, and Figs. 12 and 13 in the appendix).
 
 - `input.jpg`: the input image of the SPARK+ run, cropped as in the paper figure where the paper crops it (highboy).
-- `procedura.jpg`, `articraft.jpg`: the Procedura and Articraft results drawn in the paper's qualitative figures, the same renders (same runs, poses and cameras), placed on white. They are the only results of these methods on these images; none was chosen over another.
 
 Task sentences shown with each object are the English task sentences of the runs, written in lower case as in the paper figures.
 
-## Motion clips (`assets/clips/`)
+## Motion clips
 
-Each clip renders the URDF that SPARK+ delivered for the object at a sequence of joint values, with the paper's Blender figure renderer and studio lighting, the camera of the object in the paper's qualitative figure, and one fixed framing for all frames. Hinged and sliding parts move from rest to the goal of the task and back; continuous joints turn a full turn per loop. The desk lamp, highboy and triptych stop at the same fraction of the way to the goal as in the paper figure. The `.jpg` next to each clip is its last frame (the poster).
+Every clip renders the result that the corresponding paper figure draws (same run, same placement, same camera), with the paper's Blender figure renderer and studio lighting and one fixed framing for all frames of a clip. A model moves from its rest pose (every joint at zero) to the pose shown in the paper figure and back; a continuous joint turns one full turn instead of the quarter turn of a still figure. Nothing is chosen frame by frame. The `.jpg` next to each clip is its poster: the pose of the paper figure (for clips that only turn, the rest pose).
 
-| Clip | Object | Joint type |
+`assets/clips/`
+
+| Clip | Content | Paper figure |
 |---|---|---|
-| `wardrobe` | wardrobe | revolute |
-| `chest` | chest of drawers | prismatic |
-| `highboy` | highboy | prismatic |
-| `microwave` | microwave | revolute |
-| `triptych` | triptych | revolute |
-| `lamp` | desk lamp | revolute (two joints) |
-| `wheelchair` | wheelchair | continuous |
-| `motorbike` | motorbike | continuous |
-| `sunflower` | sunflower chest | prismatic |
-| `clock` | mantel clock | continuous |
+| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair`, `motorbike` | SPARK+, rest to the goal of its task (lamp, highboy and triptych to the same fraction of the way as the paper figure) | Figs. 8, 12, 13 |
+| `<object>_procedura` | Procedura's model, rest to the open end of every joint as drawn in the paper (same per-object fractions and limits); its continuous joints one full turn | Figs. 8, 12, 13 |
+| `<object>_articraft` | Articraft's model along its own exported animation, from q = 0 to its open pose; its poster is the pose of the paper figure (q = 0 for the triptych) | Figs. 8, 12, 13 |
+| `car_wheels`, `car_hood`, `car_door` | one car, one run per task sentence, cameras of the paper figure, one scale for the three clips | Fig. 3 |
+| `mw_door`, `mw_knob`, `mw_doorknob`, `mw_keys` | one microwave shell, one run per task sentence, one camera and crop for the four clips; the buttons travel 2 mm | Fig. 11 |
+| `bulb` | helical joint: three turns and a 10.8 mm rise, parts coloured as in the paper figure (gold stripe on the bulb), dashed line at the top of the bulb at rest | Fig. 10 |
+| `sunflower`, `clock` | SPARK+ (joint types) | |
 
-Clips are H.264, yuv420p, silent, 24 fps (continuous joints 12 fps, two turns per loop).
+`car_input.jpg` and `mw_input.jpg` are the input images, cropped as in the paper figures.
+
+`assets/qual/`: the qualitative comparison on ground-truth objects (paper Fig. 7): rows laptop, oven, box, ceiling light, microwave, toilet; for every row the input render (`<row>_input.jpg`, the benchmark's front render) and one clip per method (`gt`, `URDFormer`, `SPARK`, `articraft`, `procedura`, `Ditto`, `ours`), each placed by its best-fit registration and painted by link as in the paper. Each model moves from q = 0 to the pose of the paper cell (ground truth: its first movable joint to its open end; other methods: their joint closest to the ground-truth joint to its far end; SPARK+: the goal of its task). The joint error printed under each cell is the paper's best-fit value, taken from the same evaluation records the paper figure reads.
+
+`assets/sim/`: the four joints of paper Fig. 14 (door, lid, drawer, knob), re-run with the MuJoCo protocol of the paper unchanged (same scene, contact setting, fingertip and contact point; the re-run reaches the same joint travel as the recorded result), with a picture every 84 simulation steps from the approach to the watch after letting go, played at about twice real time. The yellow translucent ball marks the fingertip.
+
+Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turns per loop).
 
 ## Numbers on the page
 
@@ -51,7 +49,7 @@ Clips are H.264, yuv420p, silent, 24 fps (continuous joints 12 fps, two turns pe
 |---|---|
 | 100 objects with ground truth | Sec. 4, Data |
 | 13 buttons, each on its own prismatic joint (image alternative of the microwave figure) | Sec. 3.1 and App. B.8 |
-| 3.6 mm per turn, three turns; 0 / 5.4 / 10.8 mm rise (in the helical figure) | App. A.8, Fig. 10 |
+| 3.6 mm per turn, three turns, 10.8 mm rise | App. A.8, Fig. 10 |
 | 3.6 to 0.8 mm largest detachment | Fig. 6 caption |
 | 26 components (image alternative of the overview figure) | Fig. 2 |
 | 108 / 108 load in PyBullet; 109 / 113 joints driven through at least 90% of their range in MuJoCo | Sec. 5 and App. C.4 |

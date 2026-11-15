@@ -162,3 +162,30 @@ body{margin:0}
  #spark-clean .sc-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
  #spark-clean .sc-scroll img{min-width:760px}
 }
+#spark-clean .sc-task-row{display:grid;gap:18px;align-items:start;margin-bottom:40px}
+#spark-clean .sc-task-row:last-child{margin-bottom:0}
+#spark-clean .sc-task-3{grid-template-columns:0.8fr repeat(3,minmax(0,1fr))}
+#spark-clean .sc-task-4{grid-template-columns:0.8fr repeat(4,minmax(0,1fr))}
+#spark-clean .sc-task-row figure{min-width:0}
+#spark-clean .sc-task-row img,#spark-clean .sc-task-row video{width:100%;height:190px;display:block;object-fit:contain;background:#fff}
+#spark-clean .sc-task-row .sc-task-input img{background:none}
+#spark-clean .sc-task-row .sc-task-input img{border-right:1px solid var(--sc-line);padding-right:18px}
+#spark-clean .sc-task-row figcaption{text-align:center;font-size:13px;font-style:italic;color:var(--sc-ink);margin-top:10px;line-height:1.5;text-wrap:balance}
+#spark-clean .sc-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#spark-clean .sc-sim-grid video{width:100%;height:auto;display:block;aspect-ratio:6/5;object-fit:cover;background:#e7e9ee}
+#spark-clean .sc-qual{display:grid;grid-template-columns:22px repeat(8,minmax(0,1fr));gap:4px 6px;min-width:760px;align-items:center}
+#spark-clean .sc-qual > span{font-size:12px;color:var(--sc-muted);text-align:center;line-height:1.3;padding-bottom:6px}
+#spark-clean .sc-qual > span.sc-ours-label{color:#756baf}
+#spark-clean .sc-qual > b{font-weight:400;font-size:12px;color:var(--sc-muted);writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;white-space:nowrap}
+#spark-clean .sc-qual figure{min-width:0;margin:0}
+#spark-clean .sc-qual img,#spark-clean .sc-qual video{width:100%;aspect-ratio:5/4;height:auto;display:block;object-fit:contain;background:#fff}
+#spark-clean .sc-qual figcaption{text-align:center;font-size:11px;color:var(--sc-ink);font-variant-numeric:tabular-nums;min-height:16px;line-height:16px}
+#spark-clean .sc-qual figure.sc-ours figcaption{color:#756baf}
+@media(max-width:700px){
+ #spark-clean .sc-task-3,#spark-clean .sc-task-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+ #spark-clean .sc-task-row .sc-task-input{grid-column:1/-1}
+ #spark-clean .sc-task-row .sc-task-input img{border-right:0;padding-right:0;height:150px}
+ #spark-clean .sc-task-row video{height:140px}
+ #spark-clean .sc-sim-grid{gap:6px}
+ #spark-clean .sc-scroll .sc-qual img{min-width:0}
+}
