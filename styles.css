@@ -22,7 +22,7 @@ body{margin:0}
 #spark-clean .sc-section{padding:var(--sc-space) 0}
 #spark-clean .sc-heading{text-align:center;max-width:730px;margin:0 auto 35px}
 #spark-clean .sc-eyebrow{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--sc-accent);margin-bottom:10px}
-#spark-clean h2{font-size:32px;line-height:1.25;letter-spacing:-1px;font-weight:500;text-wrap:balance}
+#spark-clean h2{font-size:44px;line-height:1.15;letter-spacing:1px;font-weight:800;text-transform:uppercase;text-wrap:balance}
 #spark-clean .sc-heading > p{font-size:14px;color:var(--sc-muted);margin-top:14px;text-wrap:balance}
 #spark-clean .sc-abstract-copy{max-width:720px;margin:auto;font-size:16px;line-height:1.9;color:#595a64;text-align:left}
 #spark-clean .sc-abstract-copy strong{color:var(--sc-ink);font-weight:500}
@@ -110,7 +110,7 @@ body{margin:0}
  #spark-clean h1{font-size:29px;line-height:1.28;letter-spacing:-1px;margin-top:28px}
  #spark-clean .sc-project-name{font-size:1.7em}
  #spark-clean .sc-subtitle{font-size:14px}
- #spark-clean h2{font-size:27px}
+ #spark-clean h2{font-size:32px}
  #spark-clean .sc-abstract-copy{font-size:14px;line-height:1.95}
  #spark-clean .sc-idea-row{grid-template-columns:1fr;gap:20px;margin-top:25px}
  #spark-clean .sc-comparison thead tr{display:grid;grid-template-columns:1fr 1fr}

@@ -31,7 +31,7 @@
   </div>
   <section class="sc-soft-band sc-section" id="sc-overview">
     <div class="sc-container">
-      <div class="sc-heading"><div class="sc-eyebrow">Overview</div><h2>Articulated assets from an image and a task.</h2></div>
+      <div class="sc-heading"><h2>Overview</h2></div>
       <figure class="sc-wide-figure">
         <img src="assets/figures/teaser.jpg" width="2200" height="707" alt="Five textured articulated assets made by SPARK+, each shown with its input image and task sentence: a mantel clock (turn the two hands), a desk lamp (raise the lamp arm and turn the shade), a chest with its upper left drawer open and its CAD components shown on one half, a balance scale (tilt the beam so that one pan goes down) and a folding fan (close the fan)." decoding="async">
       </figure>
@@ -41,7 +41,7 @@
   </section>
   <div class="sc-container">
     <section class="sc-section" id="sc-comparison">
-      <div class="sc-heading"><div class="sc-eyebrow">Two families, one asset</div><h2>Keep the shell where the image shows it.<br>Program what the image cannot show.</h2></div>
+      <div class="sc-heading"><h2>Comparison</h2></div>
       <table class="sc-comparison sc-comparison-3" aria-label="How SPARK+ differs from image-to-3D generators and agentic CAD methods"><thead><tr><th scope="col"><span class="sc-visually-hidden">Aspect</span></th><th scope="col">Image-to-3D</th><th scope="col">Agentic CAD</th><th scope="col">SPARK+</th></tr></thead><tbody>
         <tr><th scope="row">Appearance</th><td>Follows the image closely, including carvings and printed details.</td><td>Assembled from primitives; drifts from the image.</td><td>Each link keeps its piece of the generated shell.</td></tr>
         <tr><th scope="row">Parts and interior</th><td>One fused surface: no separate door, nothing behind it.</td><td>Clean parts and closed solids by construction.</td><td>CAD parts written against shell measurements supply boundaries, interiors and collision bodies.</td></tr>
@@ -51,7 +51,7 @@
     </section>
     <hr class="sc-rule">
     <section class="sc-section" id="sc-method">
-      <div class="sc-heading"><div class="sc-eyebrow">Method</div><h2>From a task to an articulated asset.</h2></div>
+      <div class="sc-heading"><h2>Method</h2></div>
       <figure class="sc-wide-figure sc-plain">
         <img src="assets/figures/overview.jpg" width="2400" height="565" alt="Pipeline on a mantel clock with the task of turning its two hands: image to parts and a generated shell; hybrid links from an outline guide, a CAD agent writing 26 components, and cutting and stitching skin with CAD; joints and verification ending in a URDF that passes its checks in PyBullet." loading="lazy" decoding="async">
       </figure>
@@ -69,7 +69,7 @@
     </section>
     <hr class="sc-rule">
     <section class="sc-section" id="sc-results">
-      <div class="sc-heading"><div class="sc-eyebrow">Results</div><h2>Appearance meets articulation.</h2><p>Objects without ground truth. Procedura and Articraft as drawn in the paper; SPARK+ moves from rest to the goal of its task.</p></div>
+      <div class="sc-heading"><h2>Results</h2><p>Objects without ground truth. Procedura and Articraft as drawn in the paper; SPARK+ moves from rest to the goal of its task.</p></div>
       <div class="sc-case-tabs" role="group" aria-label="Choose an object"><button type="button" data-case="wardrobe" aria-pressed="true">Wardrobe</button><button type="button" data-case="chest" aria-pressed="false">Chest of drawers</button><button type="button" data-case="highboy" aria-pressed="false">Highboy</button><button type="button" data-case="microwave" aria-pressed="false">Microwave</button><button type="button" data-case="triptych" aria-pressed="false">Triptych</button><button type="button" data-case="lamp" aria-pressed="false">Desk lamp</button><button type="button" data-case="wheelchair" aria-pressed="false">Wheelchair</button><button type="button" data-case="motorbike" aria-pressed="false">Motorbike</button></div>
       <div class="sc-gallery-toolbar"><p class="sc-task-text"><span>Task</span><span id="sc-task" class="sc-task-sentence">“open both doors”</span></p></div>
       <div class="sc-gallery">
@@ -82,7 +82,7 @@
   </div>
   <section class="sc-soft-band sc-section" id="sc-tasks">
     <div class="sc-container">
-      <div class="sc-heading"><div class="sc-eyebrow">Task as input</div><h2>One image, different tasks.</h2><p>A part named in the task becomes a jointed link whatever its size. Only the task targets and the parts carrying them move, so joints and hidden geometry appear only where needed.</p></div>
+      <div class="sc-heading"><h2>Task as input</h2><p>A part named in the task becomes a jointed link whatever its size. Only the task targets and the parts carrying them move, so joints and hidden geometry appear only where needed.</p></div>
       <figure class="sc-wide-figure sc-plain sc-scroll">
         <img src="assets/figures/car_tasks.jpg" width="2200" height="465" alt="One car image and shell with three task sentences: rotate the four wheels, open the hood, open the driver's door. Each result shows the textured model at the goal of its task and a small render with the fixed link in grey and the moving links in blue." loading="lazy" decoding="async">
       </figure>
@@ -93,7 +93,7 @@
   </section>
   <div class="sc-container">
     <section class="sc-section" id="sc-motion">
-      <div class="sc-heading"><div class="sc-eyebrow">Joint types</div><h2>Different parts. Different motions.</h2><p>Parts that do not move are fixed to the link they sit on; every part the task moves gets one of four joint types.</p></div>
+      <div class="sc-heading"><h2>Joint types</h2><p>Parts that do not move are fixed to the link they sit on; every part the task moves gets one of four joint types.</p></div>
       <div class="sc-motion-grid">
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/microwave.jpg" aria-label="Microwave by SPARK+: the door swings open"><source src="assets/clips/microwave.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Revolute</div><h3>“open the microwave door”</h3></div></article>
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/sunflower.jpg" aria-label="Sunflower chest by SPARK+: the upper left drawer slides out"><source src="assets/clips/sunflower.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Prismatic</div><h3>“open the upper left drawer”</h3></div></article>
@@ -104,7 +104,7 @@
     <hr class="sc-rule">
     <!-- Numbers: paper Tab. 2 (comparison on 100 ArticulateArena objects, best-fit registration); PyBullet / MuJoCo counts: Sec. 5 and App. C.4. -->
     <section class="sc-section" id="sc-eval">
-      <div class="sc-heading"><div class="sc-eyebrow">Evaluation</div><h2>100 objects with ground truth.</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
+      <div class="sc-heading"><h2>Evaluation</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
       <div class="sc-table-wrap">
         <table class="sc-results" aria-label="Comparison on 100 objects of ArticulateArena with ground truth, best-fit registration">
           <thead>
@@ -134,7 +134,7 @@
   </div>
   <section class="sc-soft-band sc-section" id="sc-sim">
     <div class="sc-container">
-      <div class="sc-heading"><div class="sc-eyebrow">Simulation</div><h2>Ready for the simulator.</h2></div>
+      <div class="sc-heading"><h2>Simulation</h2></div>
       <div class="sc-split">
         <figure><img src="assets/figures/mujoco_manip.jpg" width="1400" height="1062" alt="A suction fingertip in MuJoCo opens a microwave door, closes a lid, pulls out a drawer and turns a knob, each shown in four frames." loading="lazy" decoding="async"></figure>
         <div class="sc-split-copy">
@@ -149,12 +149,12 @@
   </section>
   <div class="sc-container">
     <section class="sc-section" id="sc-limits">
-      <div class="sc-heading"><div class="sc-eyebrow">Limitations</div></div>
+      <div class="sc-heading"><h2>Limitations</h2></div>
       <p class="sc-abstract-copy sc-narrow">Our assets are not yet free of penetration, which simulators that need an intersection-free start may reject. The joint limits cause most of our joint error, surfaces hidden in the image get no skin, interiors follow the usual layout of the category, and our scores rely on best-fit registration.</p>
     </section>
     <hr class="sc-rule">
     <section class="sc-section" id="sc-bibtex">
-      <div class="sc-heading"><div class="sc-eyebrow">BibTeX</div></div>
+      <div class="sc-heading"><h2>BibTeX</h2></div>
       <pre class="sc-bibtex"><code>@misc{sparkplus2027,
   title  = {{SPARK+}: A Task-Driven Agentic Pipeline for
             Articulated Objects from a Single Image},
