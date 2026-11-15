@@ -105,28 +105,6 @@
     <!-- Numbers: paper Tab. 2 (comparison on 100 ArticulateArena objects, best-fit registration); PyBullet / MuJoCo counts: Sec. 5 and App. C.4. -->
     <section class="sc-section" id="sc-eval">
       <div class="sc-heading"><h2>Evaluation</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
-      <div class="sc-table-wrap">
-        <table class="sc-results" aria-label="Comparison on 100 objects of ArticulateArena with ground truth, best-fit registration">
-          <thead>
-            <tr><th scope="col" rowspan="2">Method</th><th scope="col" rowspan="2">Input</th><th scope="col" rowspan="2">Success&nbsp;(%)&nbsp;↑</th><th scope="colgroup" colspan="2">Joint</th><th scope="colgroup" colspan="2">Shape at rest</th><th scope="col" rowspan="2">LPIPS&nbsp;↓</th></tr>
-            <tr><th scope="col"><i>E</i>&nbsp;↓</th><th scope="col">Type Err.&nbsp;(%)&nbsp;↓</th><th scope="col">CD&nbsp;↓</th><th scope="col">F&nbsp;↑</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Articraft</th><td>image + category</td><td>99</td><td>0.653</td><td>10</td><td>3.11</td><td>37.4</td><td>0.266</td></tr>
-            <tr><th scope="row">URDFormer</th><td>image</td><td>77</td><td>1.330</td><td>36</td><td>13.09</td><td>7.7</td><td>0.557</td></tr>
-            <tr><th scope="row">SPARK</th><td>image</td><td>100</td><td>0.992</td><td>23</td><td>4.52</td><td>30.5</td><td>—</td></tr>
-            <tr><th scope="row">Procedura</th><td>image + category</td><td>97</td><td>0.631</td><td>11</td><td>2.74</td><td>40.7</td><td>0.219</td></tr>
-            <tr><th scope="row">Procedura</th><td>image + category + task</td><td>99</td><td>0.772</td><td>2</td><td>3.81</td><td>32.9</td><td>0.258</td></tr>
-            <tr><th scope="row">Ditto</th><td>GT points</td><td>100</td><td>0.849</td><td>33</td><td>2.37</td><td>45.8</td><td>—</td></tr>
-            <tr><th scope="row">Particulate</th><td>GT mesh</td><td>89</td><td>0.777</td><td>9</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><th scope="row">Particulate</th><td>Meshy mesh</td><td>98</td><td>0.833</td><td>16</td><td>1.72</td><td>50.8</td><td>—</td></tr>
-            <tr><th scope="row">ArtLLM</th><td>GT mesh</td><td>92</td><td>2.457</td><td>33</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><th scope="row">Articulate AnyMesh</th><td>GT mesh + joint limits</td><td>43</td><td>0.710</td><td>19</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr class="sc-ours-row"><th scope="row">SPARK+</th><td>image + task</td><td>100</td><td>0.470</td><td>3</td><td>1.65</td><td>52.3</td><td>0.169</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="sc-table-note"><i>E</i>: joint error of ArticulateArena (m). CD and F: Chamfer-L1 distance and F-score at 1%, in percent of the ground-truth bounding-box diagonal. LPIPS: rendered asset at rest against the input image.</p>
       <figure class="sc-wide-figure sc-plain sc-scroll sc-spaced">
         <img src="assets/figures/qual_gt.jpg" width="2000" height="1216" alt="Qualitative comparison on six ground-truth objects (laptop, oven, box, ceiling light, microwave, toilet): input render, ground truth, URDFormer, SPARK, Articraft, Procedura, Ditto and SPARK+, each model open with its base in grey and its joint error below." loading="lazy" decoding="async">
       </figure>

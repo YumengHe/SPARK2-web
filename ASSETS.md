@@ -49,7 +49,6 @@ Clips are H.264, yuv420p, silent, 24 fps (continuous joints 12 fps, two turns pe
 
 | Number | Source in the paper |
 |---|---|
-| Table rows (Success, *E*, Type Err., CD, F, LPIPS for every method) | Tab. 2, comparison on 100 objects of ArticulateArena, best-fit registration (the LLM, *E*<sub>B</sub>, *E*<sup>φ</sup><sub>α</sub>, Limit Err., CLIP and DINOv2 columns are left out) |
 | 100 objects with ground truth | Sec. 4, Data |
 | 13 buttons, each on its own prismatic joint (image alternative of the microwave figure) | Sec. 3.1 and App. B.8 |
 | 3.6 mm per turn, three turns; 0 / 5.4 / 10.8 mm rise (in the helical figure) | App. A.8, Fig. 10 |

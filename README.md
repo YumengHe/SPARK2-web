@@ -23,7 +23,7 @@ Open `http://127.0.0.1:8767/`.
 5. Results on objects without ground truth: input image, Procedura, Articraft and a SPARK+ motion clip, switchable by object.
 6. Task as input: one car and one microwave under different task sentences.
 7. Joint types: revolute, prismatic, continuous and helical motion clips.
-8. Evaluation: a short version of the paper's main comparison table and the qualitative comparison on ground-truth objects.
+8. Evaluation: the qualitative comparison on ground-truth objects.
 9. Simulation: PyBullet loading and MuJoCo end-effector operation.
 10. Limitations and BibTeX.
 
