@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#ffffff">
   <title>SPARK+</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
@@ -15,9 +15,8 @@
   <a class="skip-link" href="#sc-overview">Skip to content</a>
 <main id="spark-clean">
   <div class="sc-container">
-    <header class="sc-nav"><div class="sc-wordmark">SPARK<span>+</span></div></header>
     <section class="sc-hero" aria-labelledby="project-title">
-      <h1 id="project-title"><span class="sc-project-name">SPARK+</span>A Task-Driven Agentic Pipeline for Articulated Objects from a Single Image</h1>
+      <h1 id="project-title"><span class="sc-project-name">SPARK+:</span> A Task-Driven Agentic Pipeline for Articulated Objects from a Single Image</h1>
       <p class="sc-authors">Anonymous Authors</p>
     </section>
   </div>
@@ -32,16 +31,6 @@
     </div>
   </section>
   <div class="sc-container">
-    <section class="sc-section" id="sc-comparison">
-      <div class="sc-heading"><h2>Comparison</h2></div>
-      <table class="sc-comparison sc-comparison-3" aria-label="How SPARK+ differs from image-to-3D generators and agentic CAD methods"><thead><tr><th scope="col"><span class="sc-visually-hidden">Aspect</span></th><th scope="col">Image-to-3D</th><th scope="col">Agentic CAD</th><th scope="col">SPARK+</th></tr></thead><tbody>
-        <tr><th scope="row">Appearance</th><td>Follows the image closely, including carvings and printed details.</td><td>Assembled from primitives; drifts from the image.</td><td>Each link keeps its piece of the generated shell.</td></tr>
-        <tr><th scope="row">Parts and interior</th><td>One fused surface: no separate door, nothing behind it.</td><td>Clean parts and closed solids by construction.</td><td>CAD parts written against shell measurements supply boundaries, interiors and collision bodies.</td></tr>
-        <tr><th scope="row">Joints</th><td>None.</td><td>Explicit, but hard to place without measurements of the shape.</td><td>Placed and limited on the hybrid model, with a hinge search for each pivot.</td></tr>
-        <tr><th scope="row">Task</th><td>—</td><td>A prompt can steer the parts.</td><td>The task sentence decides which parts become jointed links.</td></tr>
-      </tbody></table>
-    </section>
-    <hr class="sc-rule">
     <section class="sc-section" id="sc-method">
       <div class="sc-heading"><h2>Method</h2></div>
       <figure class="sc-wide-figure sc-plain">
@@ -66,7 +55,6 @@
         <div class="sc-results-row"><p class="sc-task-text"><span>Triptych</span><span class="sc-task-sentence">“close the two side wings”</span></p><div class="sc-gallery"><figure><img src="assets/examples/triptych/input.jpg" alt="Input image: triptych" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/triptych_procedura.jpg" aria-label="Procedura result: triptych, moving its own joints"><source src="assets/clips/triptych_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/triptych_articraft.jpg" aria-label="Articraft result: triptych, moving its own joints"><source src="assets/clips/triptych_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/triptych.jpg" aria-label="SPARK+ result: triptych, moving from rest to the goal of its task"><source src="assets/clips/triptych.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
         <div class="sc-results-row"><p class="sc-task-text"><span>Desk lamp</span><span class="sc-task-sentence">“raise the lamp arm and turn the shade”</span></p><div class="sc-gallery"><figure><img src="assets/examples/lamp/input.jpg" alt="Input image: desk lamp" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp_procedura.jpg" aria-label="Procedura result: desk lamp, moving its own joints"><source src="assets/clips/lamp_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp_articraft.jpg" aria-label="Articraft result: desk lamp, moving its own joints"><source src="assets/clips/lamp_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp.jpg" aria-label="SPARK+ result: desk lamp, moving from rest to the goal of its task"><source src="assets/clips/lamp.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
         <div class="sc-results-row"><p class="sc-task-text"><span>Wheelchair</span><span class="sc-task-sentence">“turn the two large wheels”</span></p><div class="sc-gallery"><figure><img src="assets/examples/wheelchair/input.jpg" alt="Input image: wheelchair" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair_procedura.jpg" aria-label="Procedura result: wheelchair, moving its own joints"><source src="assets/clips/wheelchair_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair_articraft.jpg" aria-label="Articraft result: wheelchair, moving its own joints"><source src="assets/clips/wheelchair_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair.jpg" aria-label="SPARK+ result: wheelchair, moving from rest to the goal of its task"><source src="assets/clips/wheelchair.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
-        <div class="sc-results-row"><p class="sc-task-text"><span>Motorbike</span><span class="sc-task-sentence">“turn the front and rear wheels”</span></p><div class="sc-gallery"><figure><img src="assets/examples/motorbike/input.jpg" alt="Input image: motorbike" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/motorbike_procedura.jpg" aria-label="Procedura result: motorbike, moving its own joints"><source src="assets/clips/motorbike_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/motorbike_articraft.jpg" aria-label="Articraft result: motorbike, moving its own joints"><source src="assets/clips/motorbike_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/motorbike.jpg" aria-label="SPARK+ result: motorbike, moving from rest to the goal of its task"><source src="assets/clips/motorbike.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
       </div>
     </section>
   </div>

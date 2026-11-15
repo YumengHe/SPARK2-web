@@ -16,7 +16,7 @@ The outline-guide, CAD-agent and hinge-search figures are retained in the reposi
 
 ## Results section (`assets/examples/<object>/`)
 
-Objects: wardrobe, chest of drawers, highboy, microwave, triptych, desk lamp, wheelchair, motorbike. These are the objects without ground truth of the paper's qualitative figures (Fig. 8, and Figs. 12 and 13 in the appendix).
+Objects: wardrobe, chest of drawers, highboy, microwave, triptych, desk lamp, wheelchair. These objects without ground truth are selected from the paper's qualitative figures (Fig. 8, and Figs. 12 and 13 in the appendix).
 
 - `input.jpg`: the input image of the SPARK+ run, cropped as in the paper figure where the paper crops it (highboy).
 
@@ -30,7 +30,7 @@ Every clip renders the result that the corresponding paper figure draws (same ru
 
 | Clip | Content | Paper figure |
 |---|---|---|
-| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair`, `motorbike` | SPARK+, rest to the goal of its task (lamp, highboy and triptych to the same fraction of the way as the paper figure) | Figs. 8, 12, 13 |
+| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair` | SPARK+, rest to the goal of its task (lamp, highboy and triptych to the same fraction of the way as the paper figure) | Figs. 8, 12, 13 |
 | `<object>_procedura` | Procedura's model, rest to the open end of every joint as drawn in the paper (same per-object fractions and limits); its continuous joints one full turn | Figs. 8, 12, 13 |
 | `<object>_articraft` | Articraft's model along its own exported animation, from q = 0 to its open pose; its poster is the pose of the paper figure (q = 0 for the triptych) | Figs. 8, 12, 13 |
 | `car_wheels`, `car_hood`, `car_door` | one car, one run per task sentence, cameras of the paper figure, one scale for the three clips | Fig. 3 |
@@ -58,6 +58,6 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 
 ## Other files
 
-`favicon.svg` is a typographic S+ mark.
+`favicon.svg` is the supplied SVG: an S assembled from five coloured parts, with a plus at the upper right and a transparent background.
 
-`assets/fonts/` contains the local Google Sans and Noto Sans files reused from the original SPARK website. No external font service is contacted.
+Typography uses the device's installed Georgia and Avenir Next fonts, with system fallbacks. No font files are bundled or downloaded.

@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#9B93C9"/><text x="32" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" font-weight="500" fill="white">S+</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- SPARK+: an S assembled from five parts with seams between them (colours after the old SPARK icon), a plus at the top right; transparent background -->
+  <defs>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0b890"/><stop offset="1" stop-color="#a894cc"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0.6" stdDeviation="0.9" flood-color="#2a2440" flood-opacity="0.5"/></filter>
+  </defs>
+  <g fill="none" stroke="#4a4060" stroke-width="9.1" stroke-linecap="butt">
+    <path d="M38.88,21.44 A10,10 0 0 0 30.56,13.12"/>
+    <path d="M27.44,13.12 A10,10 0 0 0 19.12,21.44"/>
+    <path d="M19.12,24.56 A10,10 0 0 0 27.44,32.88"/>
+    <path d="M30.56,33.12 A10,10 0 0 1 30.56,52.88"/>
+    <path d="M27.44,52.88 A10,10 0 0 1 19.12,44.56"/>
+  </g>
+  <g fill="none" stroke-width="7.5" stroke-linecap="butt">
+    <path d="M38.88,21.44 A10,10 0 0 0 30.56,13.12" stroke="#f4d0a0"/>
+    <path d="M27.44,13.12 A10,10 0 0 0 19.12,21.44" stroke="#e8a0b8"/>
+    <path d="M19.12,24.56 A10,10 0 0 0 27.44,32.88" stroke="#b8a0d0"/>
+    <path d="M30.56,33.12 A10,10 0 0 1 30.56,52.88" stroke="url(#mid)"/>
+    <path d="M27.44,52.88 A10,10 0 0 1 19.12,44.56" stroke="#90b0d8"/>
+  </g>
+  <g fill="none"><path d="M52,8.5 V17.5" stroke="#4a4060" stroke-width="4.6" stroke-linecap="round"/><path d="M47.5,13 H56.5" stroke="#4a4060" stroke-width="4.6" stroke-linecap="round"/><path d="M52,8.5 V17.5" stroke="#8f7ab9" stroke-width="3" stroke-linecap="round"/><path d="M47.5,13 H56.5" stroke="#8f7ab9" stroke-width="3" stroke-linecap="round"/></g>
+</svg>
