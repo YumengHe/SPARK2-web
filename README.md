@@ -20,7 +20,7 @@ Open `http://127.0.0.1:8767/`.
 2. Overview: the paper's teaser figure, a shortened abstract and the three contributions.
 3. How SPARK+ differs from image-to-3D generators and agentic CAD methods.
 4. Method: the overview figure, four stages, and tabs for the outline guide, the CAD agent and the hinge search, each with its paper figure.
-5. Results on objects without ground truth: input image, Procedura, Articraft and a SPARK+ motion clip, switchable by object.
+5. Results on objects without ground truth: input image, Procedura, Articraft and a SPARK+ motion clip, all eight objects shown together.
 6. Task as input: one car and one microwave under different task sentences.
 7. Joint types: revolute, prismatic, continuous and helical motion clips.
 8. Evaluation: the qualitative comparison on ground-truth objects.
