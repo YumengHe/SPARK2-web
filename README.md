@@ -25,7 +25,6 @@ Open `http://127.0.0.1:8767/`.
 7. Joint types: revolute, prismatic, continuous and helical motion clips.
 8. Evaluation: the qualitative comparison on ground-truth objects.
 9. Simulation: PyBullet loading and MuJoCo end-effector operation.
-10. Limitations and BibTeX.
 
 Without JavaScript every section shows its first state (the wardrobe example and the outline-guide tab), and the clips play from their `autoplay` attributes. With reduced motion requested, clips stay on their poster frame.
 

@@ -95,7 +95,6 @@ body{margin:0}
 #spark-clean .sc-stats dt{font-size:28px;letter-spacing:-.8px;font-weight:500;line-height:1.2}
 #spark-clean .sc-stats dd{margin:4px 0 0;font-size:13px;color:var(--sc-muted);line-height:1.7}
 #spark-clean .sc-narrow{max-width:720px}
-#spark-clean .sc-bibtex{max-width:720px;margin:0 auto;background:#B9BEC414;border-radius:6px;padding:20px 24px;overflow-x:auto;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--sc-ink)}
 #spark-clean [hidden]{display:none!important}
 @media(max-width:700px){
  #spark-clean{--sc-space:48px}
