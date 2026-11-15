@@ -1,21 +1,62 @@
-# Preview asset provenance
+# Asset provenance
 
-## Current SPARK+ template
+Every image and clip on the page comes from the SPARK+ paper or from renders of the same SPARK+ results that the paper's figures show. Nothing is generated, retouched or composited beyond cropping, scaling, placing on white and re-encoding (which also drops all image metadata). Object names follow the paper.
 
-`assets/spark-plus-concept.svg` is the user-selected exploded-assembly concept (option A), drawn from explicit geometric primitives in the approved palette. Lavender panels represent the appearance shell, peach solids represent CAD structure and interiors, and teal dashed lines represent joint axes. It is a conceptual placeholder, not a reconstruction result, an exact pipeline diagram, or evidence of physical validity. The vector was authored with coding assistance; no image-generation model or raster imagery was used. The diagram is static, editable, and visible without JavaScript.
+## Paper figures (`assets/figures/`)
 
-`assets/paper-placeholders/` contains 30 static PNG crops extracted from Figure 6 in the SPARK+ draft screenshot supplied by the user on November 8, 2026. Only the selected image cells are included; the full screenshot, draft text, tables, TODO annotations, and numerical claims are not embedded in the site.
+| File | Paper figure |
+|---|---|
+| `teaser.jpg` | Fig. 1, teaser: mantel clock, desk lamp, sunflower chest, balance scale, folding fan |
+| `overview.jpg` | Fig. 2, overview of the pipeline, rasterized from the vector figure |
+| `seams.jpg` | Fig. 4, outline guide, rasterized from the vector figure |
+| `cad_agent.jpg` | Fig. 5, CAD agent, rasterized from the vector figure |
+| `joint_search.jpg` | Fig. 6, hinge search, rasterized from the vector figure |
+| `car_tasks.jpg` | Fig. 3, one image, three tasks |
+| `microwave_tasks.jpg` | Fig. 11, one shell, different tasks (App. B.8) |
+| `qual_gt.jpg` | Fig. 7, qualitative results on ground-truth objects of ArticulateArena |
+| `helical.jpg` | Fig. 10, helical joint on a light bulb (App. A.8) |
+| `mujoco_manip.jpg` | Fig. 14, a fingertip operating joints in MuJoCo (App. C.4) |
 
-The six object stems are `wardrobe`, `drawers`, `microwave`, `lamp`, `wheelchair`, and `motorbike`. Each has five views:
+## Results section (`assets/examples/<object>/`)
 
-- `input`: input photograph or illustration from the paper.
-- `shell`: generated mesh.
-- `procedura`: Procedura baseline, not SPARK+ CAD or ground truth.
-- `closed`: SPARK+ rest pose.
-- `opened`: SPARK+ task pose; wheels are shown at the paper's quarter-turn pose.
+Objects: wardrobe, chest of drawers, highboy, microwave, triptych, desk lamp, wheelchair, motorbike. These are the objects without ground truth of the paper's qualitative figures (Fig. 8, and Figs. 12 and 13 in the appendix).
 
-The images are exact pixel crops with no generative editing, retouching, or fabricated motion. They are low-resolution layout placeholders, not the original render assets. The highboy column is not used because the supplied draft reports an incomplete result. Original image provenance and permissions must be retained when replacing these placeholders for the final release.
+- `input.jpg`: the input image of the SPARK+ run, cropped as in the paper figure where the paper crops it (highboy).
+- `procedura.jpg`, `articraft.jpg`: the Procedura and Articraft results drawn in the paper's qualitative figures, the same renders (same runs, poses and cameras), placed on white. They are the only results of these methods on these images; none was chosen over another.
 
-The page uses system fonts. The S+ favicon is typographic template artwork, not a scientific result. All current imagery and scripts are local, and no external page links are rendered.
+Task sentences shown with each object are the English task sentences of the runs, written in lower case as in the paper figures.
 
-Unused media, prompts, processing records, configuration, and fonts from the previous template have been removed. The current page uses only the assets documented above.
+## Motion clips (`assets/clips/`)
+
+Each clip renders the URDF that SPARK+ delivered for the object at a sequence of joint values, with the paper's Blender figure renderer and studio lighting, the camera of the object in the paper's qualitative figure, and one fixed framing for all frames. Hinged and sliding parts move from rest to the goal of the task and back; continuous joints turn a full turn per loop. The desk lamp, highboy and triptych stop at the same fraction of the way to the goal as in the paper figure. The `.jpg` next to each clip is its last frame (the poster).
+
+| Clip | Object | Joint type |
+|---|---|---|
+| `wardrobe` | wardrobe | revolute |
+| `chest` | chest of drawers | prismatic |
+| `highboy` | highboy | prismatic |
+| `microwave` | microwave | revolute |
+| `triptych` | triptych | revolute |
+| `lamp` | desk lamp | revolute (two joints) |
+| `wheelchair` | wheelchair | continuous |
+| `motorbike` | motorbike | continuous |
+| `sunflower` | sunflower chest | prismatic |
+| `clock` | mantel clock | continuous |
+
+Clips are H.264, yuv420p, silent, 24 fps (continuous joints 12 fps, two turns per loop).
+
+## Numbers on the page
+
+| Number | Source in the paper |
+|---|---|
+| Table rows (Success, *E*, Type Err., CD, F, LPIPS for every method) | Tab. 2, comparison on 100 objects of ArticulateArena, best-fit registration (the LLM, *E*<sub>B</sub>, *E*<sup>φ</sup><sub>α</sub>, Limit Err., CLIP and DINOv2 columns are left out) |
+| 100 objects with ground truth | Sec. 4, Data |
+| 13 buttons, each on its own prismatic joint (image alternative of the microwave figure) | Sec. 3.1 and App. B.8 |
+| 3.6 mm per turn, three turns; 0 / 5.4 / 10.8 mm rise (in the helical figure) | App. A.8, Fig. 10 |
+| 3.6 to 0.8 mm largest detachment | Fig. 6 caption |
+| 26 components (image alternative of the overview figure) | Fig. 2 |
+| 108 / 108 load in PyBullet; 109 / 113 joints driven through at least 90% of their range in MuJoCo | Sec. 5 and App. C.4 |
+
+## Other files
+
+`favicon.svg` is a typographic S+ mark.

@@ -1,42 +1,41 @@
-# SPARK+ website template
+# SPARK+ project page
 
-A clean, figure-led academic website for **SPARK+: A Task-Driven Agentic Pipeline for Simulation-Ready Articulated Objects from a Single Image**. The repository keeps its `SPARK2-web` name.
+Project page for **SPARK+: A Task-Driven Agentic Pipeline for Articulated Objects from a Single Image**. The repository keeps its `SPARK2-web` name.
 
-This is a template, not a final research release. All displayed example images are explicitly labeled placeholders cropped from the supplied draft paper. Switching objects and poses changes static images; it does not run reconstruction or simulation. There are no final experimental claims, external page links, or runtime API calls.
+The page is static: `index.html`, `styles.css`, `app.js` and `assets/`. It uses system fonts and local files only, with no external scripts, analytics or runtime requests. All paths are relative, so it works from the repository root on GitHub Pages, including under a project subpath. The `noindex, nofollow` metadata is kept while the paper is under review; it is not access control, and the repository and its Pages site are public.
 
 ## Preview locally
 
-Requires Python 3; no build or package installation is needed:
+Requires Python 3; nothing to build or install:
 
 ```sh
 python3 -m http.server 8767 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8767/`. The same files work with GitHub Pages from `main` at the repository root, including a project subpath.
+Open `http://127.0.0.1:8767/`.
 
 ## Page structure
 
-1. Figure-led title and introduction.
-2. What's new: an exploded-assembly concept diagram, task-guided input, shell plus agent-written CAD, and geometry-guided motion.
-3. SPARK versus SPARK+ method comparison.
-4. Method overview with CAD, seam, hinge, and verification details.
-5. Selected examples with object and static-pose controls.
-6. Revolute, prismatic, and continuous motion placeholders.
+1. Title with four looping results, anonymous author line, and resource labels (paper and code coming soon).
+2. Overview: the paper's teaser figure, a shortened abstract and the three contributions.
+3. How SPARK+ differs from image-to-3D generators and agentic CAD methods.
+4. Method: the overview figure, four stages, and tabs for the outline guide, the CAD agent and the hinge search, each with its paper figure.
+5. Results on objects without ground truth: input image, Procedura, Articraft and a SPARK+ motion clip, switchable by object.
+6. Task as input: one car and one microwave under different task sentences.
+7. Joint types: revolute, prismatic, continuous and helical motion clips.
+8. Evaluation: a short version of the paper's main comparison table and the qualitative comparison on ground-truth objects.
+9. Simulation: PyBullet loading and MuJoCo end-effector operation.
+10. Limitations and BibTeX.
 
-Evaluation and Discussion sections, unavailable resource buttons, external links, and footer labels are intentionally omitted. Verification is a description of the method, not a claim that any example passed all checks.
+Without JavaScript every section shows its first state (the wardrobe example and the outline-guide tab), and the clips play from their `autoplay` attributes. With reduced motion requested, clips stay on their poster frame.
 
-## Edit the template
+## Files
 
-- `index.html`: content, section order, image alternatives, and initial example.
-- `styles.css`: the supplied accent palette, spacious layout, and mobile adaptations.
-- `app.js`: example selection, static-pose selection, and method-detail controls.
-- `assets/paper-placeholders/`: 30 cropped image cells from draft Figure 6. See `ASSETS.md` for provenance.
-- `assets/spark-plus-concept.svg`: the geometric shell-and-CAD illustration selected for the main concept section; a conceptual placeholder, not a reconstruction output.
+- `index.html`: content, section order and image alternatives.
+- `styles.css`: palette, layout and mobile adaptations.
+- `app.js`: object switching in the results section and the method-detail tabs (click, arrow keys, Home, End).
+- `assets/figures/`: paper figures as JPEG.
+- `assets/examples/<object>/`: input image and comparison renders of each object in the results section.
+- `assets/clips/`: H.264 clips (silent, looping) and their poster frames.
 
-The page uses system fonts and local images. Its initial images remain visible without JavaScript. Method controls support mouse, touch, keyboard activation, arrow keys, Home, and End.
-
-Only the current template's assets are included. Unused legacy media, configuration, and bundled fonts have been removed.
-
-## Before a final release
-
-Replace the low-resolution paper crops with approved original renders or motion clips, confirm the paper text, and add authors and resources only when supplied. Keep placeholder disclosures until their corresponding content is final. No benchmark numbers are included. The `noindex, nofollow` metadata is retained while the page is a template; it is not access control, and the GitHub repository and Pages site are public.
+`ASSETS.md` lists where every asset comes from.

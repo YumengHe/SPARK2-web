@@ -3,100 +3,167 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SPARK+: A Task-Driven Agentic Pipeline for Simulation-Ready Articulated Objects from a Single Image. Website template with placeholder imagery from the draft paper.">
+  <meta name="description" content="SPARK+ turns one image and one task sentence into an articulated URDF asset whose links join a generated shell with agent-written CAD.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#ffffff">
-  <title>SPARK+ · Project template</title>
+  <title>SPARK+</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#sc-overview">Skip to content</a>
-<main id="spark-clean" aria-label="SPARK+ clean academic website template">
+<main id="spark-clean">
   <div class="sc-container">
-    <header class="sc-nav"><div class="sc-wordmark">SPARK<span>+</span></div><nav class="sc-links" aria-label="Page sections"><a href="#sc-overview">What's new</a><a href="#sc-method">Method</a><a href="#sc-results">Examples</a><span class="sc-template">Placeholder template</span></nav></header>
-    <section class="sc-hero" aria-label="SPARK+ introduction">
+    <header class="sc-nav"><div class="sc-wordmark">SPARK<span>+</span></div><nav class="sc-links" aria-label="Page sections"><a href="#sc-overview">Overview</a><a href="#sc-method">Method</a><a href="#sc-results">Results</a><a href="#sc-tasks">Tasks</a><a href="#sc-eval">Evaluation</a><a href="#sc-bibtex">BibTeX</a></nav></header>
+    <section class="sc-hero" aria-labelledby="project-title">
       <div class="sc-objects">
-        <figure class="sc-object"><img data-crop="58 580 112 124" alt="Placeholder: opened wardrobe from the paper" src="assets/paper-placeholders/wardrobe-opened.png" width="112" height="124" decoding="async"><figcaption>Open.</figcaption></figure>
-        <figure class="sc-object"><img data-crop="173 580 112 124" alt="Placeholder: open drawer from the paper" src="assets/paper-placeholders/drawers-opened.png" width="112" height="124" decoding="async"><figcaption>Slide.</figcaption></figure>
-        <figure class="sc-object"><img data-crop="634 580 108 124" alt="Placeholder: adjusted lamp from the paper" src="assets/paper-placeholders/lamp-opened.png" width="108" height="124" decoding="async"><figcaption>Articulate.</figcaption></figure>
-        <figure class="sc-object"><img data-crop="746 580 112 124" alt="Placeholder: wheelchair from the paper" src="assets/paper-placeholders/wheelchair-opened.png" width="112" height="124" decoding="async"><figcaption>Rotate.</figcaption></figure>
+        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/wardrobe.jpg" aria-label="Wardrobe by SPARK+: both doors swing open"><source src="assets/clips/wardrobe.mp4" type="video/mp4"></video><figcaption>Open.</figcaption></figure>
+        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/chest.jpg" aria-label="Chest of drawers by SPARK+: the upper left drawer slides out"><source src="assets/clips/chest.mp4" type="video/mp4"></video><figcaption>Slide.</figcaption></figure>
+        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/lamp.jpg" aria-label="Desk lamp by SPARK+: the arm rises and the shade turns"><source src="assets/clips/lamp.mp4" type="video/mp4"></video><figcaption>Articulate.</figcaption></figure>
+        <figure class="sc-object"><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/clock.jpg" aria-label="Mantel clock by SPARK+: the two hands turn"><source src="assets/clips/clock.mp4" type="video/mp4"></video><figcaption>Rotate.</figcaption></figure>
       </div>
-      <p class="sc-placeholder">Placeholder imagery from the paper · static screenshots, not live demos</p>
-      <h1 id="project-title"><span class="sc-project-name">SPARK+</span>A Task-Driven Agentic Pipeline for Simulation-Ready Articulated Objects from a Single Image</h1>
-      <p class="sc-subtitle">Generated appearance. Programmed structure.<br>Task-driven motion.</p>
-      <p class="sc-hero-foot">Website template · final text, figures, and results pending</p>
+      <h1 id="project-title"><span class="sc-project-name">SPARK+</span>A Task-Driven Agentic Pipeline for Articulated Objects from a Single Image</h1>
+      <p class="sc-authors">Anonymous Authors</p>
+      <p class="sc-subtitle">One image and one task sentence in, a URDF asset out. <br>The look comes from a generated shell, the parts, interiors and joints from CAD.</p>
+      <p class="sc-resources"><span>Paper · coming soon</span><span>Code · coming soon</span></p>
     </section>
   </div>
   <section class="sc-soft-band sc-section" id="sc-overview">
     <div class="sc-container">
-      <div class="sc-heading"><div class="sc-eyebrow">What's new in SPARK+</div><h2>A new way to build<br>articulated objects.</h2></div>
-      <div class="sc-concept-layout">
-        <figure class="sc-concept-figure">
-          <img src="assets/spark-plus-concept.svg" width="600" height="560" alt="Exploded cabinet schematic: lavender appearance panels surround a peach CAD-built interior, with teal joint axes." loading="lazy" decoding="async">
-          <figcaption>Conceptual schematic · placeholder</figcaption>
-        </figure>
-        <div class="sc-concept-copy">
-          <p class="sc-abstract-copy">SPARK jointly generates the part meshes of a coherent articulated object using a diffusion model guided by VLM-inferred structure. SPARK+ takes a different approach: combine a <strong>generated appearance shell</strong> with <strong>agent-written CAD</strong> for part structure, hidden interiors, and collision geometry. A task sentence guides what needs to move, while geometric checks guide how the parts fit and articulate.</p>
-          <ul class="sc-concept-legend" aria-label="Schematic color key">
-            <li><span class="sc-concept-swatch" style="--tone:#9B93C9" aria-hidden="true"></span>Appearance shell</li>
-            <li><span class="sc-concept-swatch" style="--tone:#E09A6E" aria-hidden="true"></span>CAD interior</li>
-            <li><span class="sc-concept-swatch sc-concept-axis" style="--tone:#6FB5AE" aria-hidden="true"></span>Joint axes</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sc-idea-row"><div class="sc-idea" style="--tone:#E09A6E"><h3>Image + task</h3><p>“Open both doors” specifies the required interaction. The task guides which parts need to move and their joint types.</p></div><div class="sc-idea" style="--tone:#C58BC0"><h3>Shell + agent-written CAD</h3><p>Keep the detailed exterior. Write and repair CAD for hidden interiors, part structure, and collision bodies against shell measurements.</p></div><div class="sc-idea" style="--tone:#7FA6CF"><h3>Geometry-guided motion</h3><p>Search hinge pivots to reduce penetration and detachment during motion. Use contact and opening priors to help determine limits.</p></div></div>
-      <p class="sc-abstract-note">Placeholder copy · contributions summarized from the supplied draft</p>
+      <div class="sc-heading"><div class="sc-eyebrow">Overview</div><h2>Articulated assets from an image and a task.</h2></div>
+      <figure class="sc-wide-figure">
+        <img src="assets/figures/teaser.jpg" width="2200" height="707" alt="Five textured articulated assets made by SPARK+, each shown with its input image and task sentence: a mantel clock (turn the two hands), a desk lamp (raise the lamp arm and turn the shade), a chest with its upper left drawer open and its CAD components shown on one half, a balance scale (tilt the beam so that one pan goes down) and a folding fan (close the fan)." decoding="async">
+      </figure>
+      <p class="sc-abstract-copy">Articulated 3D assets are essential for robot learning in simulation, yet building them by hand is slow. Image-to-3D generators follow a single image closely but output one fused shell without parts, interiors or joints. Agentic CAD methods write clean parts and explicit joints, but their geometry is coarse and drifts from the image. SPARK+ turns an image and a task sentence into an articulated asset whose links are <strong>hybrids of a generated shell</strong> for the look and <strong>CAD programs</strong> for part boundaries, hidden geometry and the collision body used in simulation. A vision-language model plans the parts, a CAD agent writes every link against measurements of the shell, and the joints are placed and limited on the hybrid model.</p>
+      <div class="sc-idea-row"><div class="sc-idea" style="--tone:#E09A6E"><h3>Hybrid links</h3><p>Each link keeps its piece of the generated shell as skin and adds a closed CAD solid that fills the interior and serves as the collision body.</p></div><div class="sc-idea" style="--tone:#C58BC0"><h3>Task-driven agentic pipeline</h3><p>The task sentence decides which parts move. A CAD agent plans, writes and repairs every link against measurements of the shell, guided by drawn outlines.</p></div><div class="sc-idea" style="--tone:#7FA6CF"><h3>Joints on the hybrid model</h3><p>Fixed, revolute, prismatic, continuous and helical joints. A hinge search moves each pivot, and limits come from contact and the usual opening of each part.</p></div></div>
     </div>
   </section>
   <div class="sc-container">
     <section class="sc-section" id="sc-comparison">
-      <div class="sc-heading"><div class="sc-eyebrow">SPARK → SPARK+</div><h2>Same goal. A different construction.</h2><p>Both aim to produce articulated assets. What changes is how the geometry and motion are built.</p></div>
-      <table class="sc-comparison" aria-label="Method differences between SPARK and SPARK+"><thead><tr><th scope="col">Design choice</th><th scope="col">SPARK</th><th scope="col">SPARK+</th></tr></thead><tbody>
-        <tr><th scope="row">Input</th><td><strong>One image.</strong><br>A VLM infers parts and an initial articulation structure.</td><td><strong>One image + a task.</strong><br>The requested interaction guides the moving parts and joint types.</td></tr>
-        <tr><th scope="row">Geometry</th><td><strong>Jointly generate the parts.</strong><br>A diffusion model jointly synthesizes part meshes that form a coherent articulated object, guided by images and VLM-inferred structure.</td><td><strong>Combine a shell with CAD.</strong><br>Preserve generated appearance and program the hidden geometry and collision bodies.</td></tr>
-        <tr><th scope="row">Joint refinement</th><td><strong>Match a predicted open state.</strong><br>Differentiable rendering adjusts joint parameters against a VLM-generated reference image.</td><td><strong>Search on the hybrid geometry.</strong><br>Score hinge candidates for penetration and detachment; derive limits using contact and opening priors.</td></tr>
+      <div class="sc-heading"><div class="sc-eyebrow">Two families, one asset</div><h2>Keep the shell where the image shows it.<br>Program what the image cannot show.</h2></div>
+      <table class="sc-comparison sc-comparison-3" aria-label="How SPARK+ differs from image-to-3D generators and agentic CAD methods"><thead><tr><th scope="col"><span class="sc-visually-hidden">Aspect</span></th><th scope="col">Image-to-3D</th><th scope="col">Agentic CAD</th><th scope="col">SPARK+</th></tr></thead><tbody>
+        <tr><th scope="row">Appearance</th><td>Follows the image closely, including carvings and printed details.</td><td>Assembled from primitives; drifts from the image.</td><td>Each link keeps its piece of the generated shell.</td></tr>
+        <tr><th scope="row">Parts and interior</th><td>One fused surface: no separate door, nothing behind it.</td><td>Clean parts and closed solids by construction.</td><td>CAD parts written against shell measurements supply boundaries, interiors and collision bodies.</td></tr>
+        <tr><th scope="row">Joints</th><td>None.</td><td>Explicit, but hard to place without measurements of the shape.</td><td>Placed and limited on the hybrid model, with a hinge search for each pivot.</td></tr>
+        <tr><th scope="row">Task</th><td>—</td><td>A prompt can steer the parts.</td><td>The task sentence decides which parts become jointed links.</td></tr>
       </tbody></table>
-      <p class="sc-comparison-note">Placeholder copy · method comparison</p>
     </section>
     <hr class="sc-rule">
     <section class="sc-section" id="sc-method">
-      <div class="sc-heading"><div class="sc-eyebrow">How it works</div><h2>From a task to an articulated asset.</h2><p>Generated appearance and programmed geometry, connected in one pipeline.</p></div>
+      <div class="sc-heading"><div class="sc-eyebrow">Method</div><h2>From a task to an articulated asset.</h2></div>
+      <figure class="sc-wide-figure sc-plain">
+        <img src="assets/figures/overview.jpg" width="2400" height="565" alt="Pipeline on a mantel clock with the task of turning its two hands: image to parts and a generated shell; hybrid links from an outline guide, a CAD agent writing 26 components, and cutting and stitching skin with CAD; joints and verification ending in a URDF that passes its checks in PyBullet." loading="lazy" decoding="async">
+      </figure>
       <div class="sc-pipeline">
-        <article class="sc-stage" style="--tone:#E09A6E"><div class="sc-stage-no">01</div><h3>Understand</h3><p>Read the image and task. Identify the movable parts, their relationships, and joint types.</p></article>
-        <article class="sc-stage" style="--tone:#C58BC0"><div class="sc-stage-no">02</div><h3>Construct</h3><p>Generate the shell. Write and repair CAD components against measurements of its geometry.</p></article>
-        <article class="sc-stage" style="--tone:#7FA6CF"><div class="sc-stage-no">03</div><h3>Assemble</h3><p>Refine seams, cut and stitch the parts, then search hinge pivots and determine motion limits.</p></article>
-        <article class="sc-stage" style="--tone:#6FB5AE"><div class="sc-stage-no">04</div><h3>Verify</h3><p>Export URDF and textured links. Check geometry, joint motion, and the requested task.</p></article>
+        <article class="sc-stage" style="--tone:#E09A6E"><div class="sc-stage-no">01</div><h3>Task and parts</h3><p>A VLM turns the sentence into tasks and writes a part table. An image-to-3D generator makes the shell, which is set upright and scaled.</p></article>
+        <article class="sc-stage" style="--tone:#C58BC0"><div class="sc-stage-no">02</div><h3>Outline guide</h3><p>An image model draws a closed loop around each movable part on a render of the shell; each piece snaps to the nearest strong crease.</p></article>
+        <article class="sc-stage" style="--tone:#7FA6CF"><div class="sc-stage-no">03</div><h3>CAD agent</h3><p>One call plans all links as components, which are written in parallel as OpenSCAD, clipped to the shell and repaired over rounds.</p></article>
+        <article class="sc-stage" style="--tone:#6FB5AE"><div class="sc-stage-no">04</div><h3>Stitch and joint</h3><p>The shell is cut along the outlines and each piece is joined with its CAD. Joints are placed, searched and limited, then verified and exported as URDF.</p></article>
       </div>
-      <div class="sc-method-tabs" role="tablist" aria-label="Method details"><button id="sc-tab-agent" type="button" role="tab" aria-selected="true" aria-controls="sc-method-panel" data-method="agent">CAD agent</button><button id="sc-tab-seams" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="seams">Seam refinement</button><button id="sc-tab-hinges" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="hinges">Hinge search</button><button id="sc-tab-verification" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="verification">Verification</button></div>
-      <div class="sc-method-panel" id="sc-method-panel" role="tabpanel" aria-labelledby="sc-tab-agent"><div><div class="sc-placeholder">Method detail · placeholder copy</div><h3 id="sc-method-title">Plan, build, and repair.</h3><p id="sc-method-copy" aria-live="polite">The CAD agent plans components, writes them in parallel, clips them against the shell, and repairs the components responsible for failed checks.</p></div><div class="sc-reserved"><p><strong id="sc-method-media">Figure 4 · CAD agent sequence</strong><span>Placeholder — original figure or process video to be added.</span></p></div></div>
+      <div class="sc-method-tabs" role="tablist" aria-label="Method details"><button id="sc-tab-seams" type="button" role="tab" aria-selected="true" aria-controls="sc-method-panel" data-method="seams">Outline guide</button><button id="sc-tab-agent" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="agent" tabindex="-1">CAD agent</button><button id="sc-tab-hinges" type="button" role="tab" aria-selected="false" aria-controls="sc-method-panel" data-method="hinges" tabindex="-1">Hinge search</button></div>
+      <div class="sc-method-panel" id="sc-method-panel" role="tabpanel" aria-labelledby="sc-tab-seams" tabindex="0">
+        <div><h3 id="sc-method-title">Find the boundary on the shell.</h3><p id="sc-method-copy">A generated surface rarely has a clean gap between a door and its frame. An image model draws a closed loop around the named part on a render of the shell; the loop is registered to the render and each piece moves to the strongest nearby crease, which gives the seam. Shown on a chest drawer.</p></div>
+        <figure class="sc-method-figure"><img id="sc-method-img" src="assets/figures/seams.jpg" width="1300" height="705" alt="Outline guide on a chest drawer: the drawn loop on the render, and a close-up with the drawn line, the searched band and the refined seam." loading="lazy" decoding="async"></figure>
+      </div>
     </section>
     <hr class="sc-rule">
     <section class="sc-section" id="sc-results">
-      <div class="sc-heading"><div class="sc-eyebrow">Selected examples</div><h2>Appearance meets articulation.</h2><p>Paper-image placeholders showing the input, generated mesh, CAD baseline, and hybrid result.</p></div>
-      <div class="sc-case-tabs" aria-label="Choose an example"><button type="button" data-case="wardrobe" aria-pressed="true">Wardrobe</button><button type="button" data-case="drawers" aria-pressed="false">Drawers</button><button type="button" data-case="microwave" aria-pressed="false">Microwave</button><button type="button" data-case="lamp" aria-pressed="false">Desk lamp</button><button type="button" data-case="wheelchair" aria-pressed="false">Wheelchair</button><button type="button" data-case="motorbike" aria-pressed="false">Motorbike</button></div>
-      <div class="sc-gallery-toolbar"><p class="sc-task-text"><span>Task</span><span id="sc-task" style="color:var(--sc-ink)">Open both doors.</span></p><div class="sc-view-tabs" aria-label="SPARK+ static pose"><button type="button" data-pose="closed" aria-pressed="false">Rest pose</button><button type="button" data-pose="opened" aria-pressed="true">Task pose</button></div></div>
+      <div class="sc-heading"><div class="sc-eyebrow">Results</div><h2>Appearance meets articulation.</h2><p>Objects without ground truth. Procedura and Articraft as drawn in the paper; SPARK+ moves from rest to the goal of its task.</p></div>
+      <div class="sc-case-tabs" role="group" aria-label="Choose an object"><button type="button" data-case="wardrobe" aria-pressed="true">Wardrobe</button><button type="button" data-case="chest" aria-pressed="false">Chest of drawers</button><button type="button" data-case="highboy" aria-pressed="false">Highboy</button><button type="button" data-case="microwave" aria-pressed="false">Microwave</button><button type="button" data-case="triptych" aria-pressed="false">Triptych</button><button type="button" data-case="lamp" aria-pressed="false">Desk lamp</button><button type="button" data-case="wheelchair" aria-pressed="false">Wheelchair</button><button type="button" data-case="motorbike" aria-pressed="false">Motorbike</button></div>
+      <div class="sc-gallery-toolbar"><p class="sc-task-text"><span>Task</span><span id="sc-task" class="sc-task-sentence">“open both doors”</span></p></div>
       <div class="sc-gallery">
-        <figure><img id="sc-input" data-crop="58 66 112 122" alt="Placeholder: input image from paper Figure 6" src="assets/paper-placeholders/wardrobe-input.png" width="112" height="122" decoding="async"><figcaption>Input image</figcaption></figure>
-        <figure><img id="sc-shell" data-crop="58 192 112 124" alt="Placeholder: generated mesh from paper Figure 6" src="assets/paper-placeholders/wardrobe-shell.png" width="112" height="124" decoding="async"><figcaption>Generated mesh</figcaption></figure>
-        <figure><img id="sc-procedura" data-crop="58 320 112 124" alt="Placeholder: Procedura baseline from paper Figure 6" src="assets/paper-placeholders/wardrobe-procedura.png" width="112" height="124" decoding="async"><figcaption>Procedura</figcaption></figure>
-        <figure><img id="sc-final" data-crop="58 580 112 124" alt="Placeholder: SPARK+ task pose from paper Figure 6" src="assets/paper-placeholders/wardrobe-opened.png" width="112" height="124" decoding="async"><figcaption id="sc-final-caption">SPARK+ · task pose</figcaption></figure>
+        <figure><img id="sc-input" src="assets/examples/wardrobe/input.jpg" alt="Input image: wardrobe" decoding="async"><figcaption>Input image</figcaption></figure>
+        <figure><img id="sc-procedura" src="assets/examples/wardrobe/procedura.jpg" alt="Procedura result: wardrobe, open" decoding="async"><figcaption>Procedura</figcaption></figure>
+        <figure><img id="sc-articraft" src="assets/examples/wardrobe/articraft.jpg" alt="Articraft result: wardrobe, open" decoding="async"><figcaption>Articraft</figcaption></figure>
+        <figure class="sc-ours"><video id="sc-final" class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/wardrobe.jpg" aria-label="SPARK+ result: wardrobe, moving from rest to the goal of its task"><source src="assets/clips/wardrobe.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure>
       </div>
-      <p class="sc-gallery-note" id="sc-gallery-note" aria-live="polite">Placeholder · static crops from draft Figure 6. These controls switch paper images; they do not run a reconstruction or simulation.</p>
     </section>
   </div>
-  <section class="sc-soft-band sc-section" id="sc-motion">
-    <div class="sc-container"><div class="sc-heading"><div class="sc-eyebrow">Task-driven articulation</div><h2>Different objects. Different motions.</h2><p>Three joint types described in the draft, illustrated with paper-image placeholders.</p></div>
-      <div class="sc-motion-grid">
-        <article><img data-crop="58 580 112 124" alt="Placeholder: wardrobe for revolute motion" src="assets/paper-placeholders/wardrobe-opened.png" width="112" height="124" decoding="async"><div><h3>Open a door.</h3><div class="sc-joint-label">Revolute</div><p>Show the hinge, the door’s path, and the interior it reveals.</p></div></article>
-        <article><img data-crop="173 580 112 124" alt="Placeholder: drawer for prismatic motion" src="assets/paper-placeholders/drawers-opened.png" width="112" height="124" decoding="async"><div><h3>Pull a drawer.</h3><div class="sc-joint-label">Prismatic</div><p>Show the drawer box, cabinet cavity, and available travel.</p></div></article>
-        <article><img data-crop="861 580 115 124" alt="Placeholder: motorbike for continuous wheel rotation" src="assets/paper-placeholders/motorbike-opened.png" width="115" height="124" decoding="async"><div><h3>Turn a wheel.</h3><div class="sc-joint-label">Continuous</div><p>Add a rotation clip so the motion is visible beyond a still image.</p></div></article>
-      </div>
-      <p class="sc-abstract-note">Placeholder · replace these paper crops with exported motion clips</p>
+  <section class="sc-soft-band sc-section" id="sc-tasks">
+    <div class="sc-container">
+      <div class="sc-heading"><div class="sc-eyebrow">Task as input</div><h2>One image, different tasks.</h2><p>A part named in the task becomes a jointed link whatever its size. Only the task targets and the parts carrying them move, so joints and hidden geometry appear only where needed.</p></div>
+      <figure class="sc-wide-figure sc-plain sc-scroll">
+        <img src="assets/figures/car_tasks.jpg" width="2200" height="465" alt="One car image and shell with three task sentences: rotate the four wheels, open the hood, open the driver's door. Each result shows the textured model at the goal of its task and a small render with the fixed link in grey and the moving links in blue." loading="lazy" decoding="async">
+      </figure>
+      <figure class="sc-wide-figure sc-plain sc-scroll">
+        <img src="assets/figures/microwave_tasks.jpg" width="2200" height="565" alt="One microwave image with four task sentences: open the microwave door; turn the knob on the control panel; open the door and turn the knob; press the buttons on the control panel, where each of the 13 buttons gets its own prismatic joint." loading="lazy" decoding="async">
+      </figure>
     </div>
   </section>
+  <div class="sc-container">
+    <section class="sc-section" id="sc-motion">
+      <div class="sc-heading"><div class="sc-eyebrow">Joint types</div><h2>Different parts. Different motions.</h2><p>Parts that do not move are fixed to the link they sit on; every part the task moves gets one of four joint types.</p></div>
+      <div class="sc-motion-grid">
+        <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/microwave.jpg" aria-label="Microwave by SPARK+: the door swings open"><source src="assets/clips/microwave.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Revolute</div><h3>“open the microwave door”</h3></div></article>
+        <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/sunflower.jpg" aria-label="Sunflower chest by SPARK+: the upper left drawer slides out"><source src="assets/clips/sunflower.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Prismatic</div><h3>“open the upper left drawer”</h3></div></article>
+        <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/clock.jpg" aria-label="Mantel clock by SPARK+: the two hands turn"><source src="assets/clips/clock.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Continuous</div><h3>“turn the two hands”</h3></div></article>
+        <article><img class="sc-motion-still" src="assets/figures/helical.jpg" width="1100" height="543" alt="Light bulb by SPARK+ at 0, 1.5 and 3 turns: a gold stripe on the bulb shows the turn, and the bulb rises 0, 5.4 and 10.8 mm." loading="lazy" decoding="async"><div><div class="sc-joint-label">Helical</div><h3>“Unscrew the light bulb from its socket.”</h3><p>Three turns at 3.6&nbsp;mm per turn, written as a revolute and a prismatic joint on one axis.</p></div></article>
+      </div>
+    </section>
+    <hr class="sc-rule">
+    <!-- Numbers: paper Tab. 2 (comparison on 100 ArticulateArena objects, best-fit registration); PyBullet / MuJoCo counts: Sec. 5 and App. C.4. -->
+    <section class="sc-section" id="sc-eval">
+      <div class="sc-heading"><div class="sc-eyebrow">Evaluation</div><h2>100 objects with ground truth.</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
+      <div class="sc-table-wrap">
+        <table class="sc-results" aria-label="Comparison on 100 objects of ArticulateArena with ground truth, best-fit registration">
+          <thead>
+            <tr><th scope="col" rowspan="2">Method</th><th scope="col" rowspan="2">Input</th><th scope="col" rowspan="2">Success&nbsp;(%)&nbsp;↑</th><th scope="colgroup" colspan="2">Joint</th><th scope="colgroup" colspan="2">Shape at rest</th><th scope="col" rowspan="2">LPIPS&nbsp;↓</th></tr>
+            <tr><th scope="col"><i>E</i>&nbsp;↓</th><th scope="col">Type Err.&nbsp;(%)&nbsp;↓</th><th scope="col">CD&nbsp;↓</th><th scope="col">F&nbsp;↑</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Articraft</th><td>image + category</td><td>99</td><td>0.653</td><td>10</td><td>3.11</td><td>37.4</td><td>0.266</td></tr>
+            <tr><th scope="row">URDFormer</th><td>image</td><td>77</td><td>1.330</td><td>36</td><td>13.09</td><td>7.7</td><td>0.557</td></tr>
+            <tr><th scope="row">SPARK</th><td>image</td><td>100</td><td>0.992</td><td>23</td><td>4.52</td><td>30.5</td><td>—</td></tr>
+            <tr><th scope="row">Procedura</th><td>image + category</td><td>97</td><td>0.631</td><td>11</td><td>2.74</td><td>40.7</td><td>0.219</td></tr>
+            <tr><th scope="row">Procedura</th><td>image + category + task</td><td>99</td><td>0.772</td><td>2</td><td>3.81</td><td>32.9</td><td>0.258</td></tr>
+            <tr><th scope="row">Ditto</th><td>GT points</td><td>100</td><td>0.849</td><td>33</td><td>2.37</td><td>45.8</td><td>—</td></tr>
+            <tr><th scope="row">Particulate</th><td>GT mesh</td><td>89</td><td>0.777</td><td>9</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><th scope="row">Particulate</th><td>Meshy mesh</td><td>98</td><td>0.833</td><td>16</td><td>1.72</td><td>50.8</td><td>—</td></tr>
+            <tr><th scope="row">ArtLLM</th><td>GT mesh</td><td>92</td><td>2.457</td><td>33</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><th scope="row">Articulate AnyMesh</th><td>GT mesh + joint limits</td><td>43</td><td>0.710</td><td>19</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr class="sc-ours-row"><th scope="row">SPARK+</th><td>image + task</td><td>100</td><td>0.470</td><td>3</td><td>1.65</td><td>52.3</td><td>0.169</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sc-table-note"><i>E</i>: joint error of ArticulateArena (m). CD and F: Chamfer-L1 distance and F-score at 1%, in percent of the ground-truth bounding-box diagonal. LPIPS: rendered asset at rest against the input image.</p>
+      <figure class="sc-wide-figure sc-plain sc-scroll sc-spaced">
+        <img src="assets/figures/qual_gt.jpg" width="2000" height="1216" alt="Qualitative comparison on six ground-truth objects (laptop, oven, box, ceiling light, microwave, toilet): input render, ground truth, URDFormer, SPARK, Articraft, Procedura, Ditto and SPARK+, each model open with its base in grey and its joint error below." loading="lazy" decoding="async">
+      </figure>
+    </section>
+  </div>
+  <section class="sc-soft-band sc-section" id="sc-sim">
+    <div class="sc-container">
+      <div class="sc-heading"><div class="sc-eyebrow">Simulation</div><h2>Ready for the simulator.</h2></div>
+      <div class="sc-split">
+        <figure><img src="assets/figures/mujoco_manip.jpg" width="1400" height="1062" alt="A suction fingertip in MuJoCo opens a microwave door, closes a lid, pulls out a drawer and turns a knob, each shown in four frames." loading="lazy" decoding="async"></figure>
+        <div class="sc-split-copy">
+          <p>The CAD solids serve as the collision bodies, and every asset is written as a URDF.</p>
+          <dl class="sc-stats">
+            <div><dt>108 / 108</dt><dd>assets in our run statistics load in PyBullet as written</dd></div>
+            <div><dt>109 / 113</dt><dd>movable joints driven through at least 90% of their range by a simulated end effector in MuJoCo</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="sc-container">
+    <section class="sc-section" id="sc-limits">
+      <div class="sc-heading"><div class="sc-eyebrow">Limitations</div></div>
+      <p class="sc-abstract-copy sc-narrow">Our assets are not yet free of penetration, which simulators that need an intersection-free start may reject. The joint limits cause most of our joint error, surfaces hidden in the image get no skin, interiors follow the usual layout of the category, and our scores rely on best-fit registration.</p>
+    </section>
+    <hr class="sc-rule">
+    <section class="sc-section" id="sc-bibtex">
+      <div class="sc-heading"><div class="sc-eyebrow">BibTeX</div></div>
+      <pre class="sc-bibtex"><code>@misc{sparkplus2027,
+  title  = {{SPARK+}: A Task-Driven Agentic Pipeline for
+            Articulated Objects from a Single Image},
+  author = {Anonymous},
+  year   = {2027},
+  note   = {Under review}
+}</code></pre>
+    </section>
+  </div>
 </main>
-  <noscript><p style="text-align:center;padding:20px">Static paper-image placeholders are shown. Enable JavaScript to switch examples, poses, and method details.</p></noscript>
 </body>
 </html>

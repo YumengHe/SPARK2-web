@@ -1,67 +1,107 @@
-(()=>{
- const root=document.getElementById('spark-clean');
- const cropPaths={
-  "58 66 112 122": "assets/paper-placeholders/wardrobe-input.png",
-  "58 192 112 124": "assets/paper-placeholders/wardrobe-shell.png",
-  "58 320 112 124": "assets/paper-placeholders/wardrobe-procedura.png",
-  "58 451 112 124": "assets/paper-placeholders/wardrobe-closed.png",
-  "58 580 112 124": "assets/paper-placeholders/wardrobe-opened.png",
-  "173 66 112 122": "assets/paper-placeholders/drawers-input.png",
-  "173 192 112 124": "assets/paper-placeholders/drawers-shell.png",
-  "173 320 112 124": "assets/paper-placeholders/drawers-procedura.png",
-  "173 451 112 124": "assets/paper-placeholders/drawers-closed.png",
-  "173 580 112 124": "assets/paper-placeholders/drawers-opened.png",
-  "518 66 112 122": "assets/paper-placeholders/microwave-input.png",
-  "518 192 112 124": "assets/paper-placeholders/microwave-shell.png",
-  "518 320 112 124": "assets/paper-placeholders/microwave-procedura.png",
-  "518 451 112 124": "assets/paper-placeholders/microwave-closed.png",
-  "518 580 112 124": "assets/paper-placeholders/microwave-opened.png",
-  "634 66 108 122": "assets/paper-placeholders/lamp-input.png",
-  "634 192 108 124": "assets/paper-placeholders/lamp-shell.png",
-  "634 320 108 124": "assets/paper-placeholders/lamp-procedura.png",
-  "634 451 108 124": "assets/paper-placeholders/lamp-closed.png",
-  "634 580 108 124": "assets/paper-placeholders/lamp-opened.png",
-  "746 66 112 122": "assets/paper-placeholders/wheelchair-input.png",
-  "746 192 112 124": "assets/paper-placeholders/wheelchair-shell.png",
-  "746 320 112 124": "assets/paper-placeholders/wheelchair-procedura.png",
-  "746 451 112 124": "assets/paper-placeholders/wheelchair-closed.png",
-  "746 580 112 124": "assets/paper-placeholders/wheelchair-opened.png",
-  "861 66 115 122": "assets/paper-placeholders/motorbike-input.png",
-  "861 192 115 124": "assets/paper-placeholders/motorbike-shell.png",
-  "861 320 115 124": "assets/paper-placeholders/motorbike-procedura.png",
-  "861 451 115 124": "assets/paper-placeholders/motorbike-closed.png",
-  "861 580 115 124": "assets/paper-placeholders/motorbike-opened.png"
-};
- function setCrop(image,box){image.src=cropPaths[box];}
- root.querySelectorAll('[data-crop]').forEach(svg=>setCrop(svg,svg.dataset.crop));
- const cases={wardrobe:{x:58,w:112,task:'Open both doors.'},drawers:{x:173,w:112,task:'Open one drawer.'},microwave:{x:518,w:112,task:'Open the microwave door.'},lamp:{x:634,w:108,task:'Raise the arm and turn the shade.'},wheelchair:{x:746,w:112,task:'Turn the wheels.'},motorbike:{x:861,w:115,task:'Turn the front and rear wheels.'}};
- const view={object:'wardrobe',pose:'opened'};
- function renderGallery(){
-  const item=cases[view.object];
-  [['sc-input',66,122],['sc-shell',192,124],['sc-procedura',320,124],['sc-final',view.pose==='opened'?580:451,124]].forEach(([id,y,h])=>{const svg=root.querySelector('#'+id);setCrop(svg,`${item.x} ${y} ${item.w} ${h}`);svg.setAttribute('alt',`Placeholder paper image: ${view.object}, ${id==='sc-final'?view.pose:id.slice(3)}`);});
-  root.querySelector('#sc-task').textContent=item.task;
-  root.querySelector('#sc-final-caption').textContent='SPARK+ · '+(view.pose==='opened'?'task pose':'rest pose');
-  root.querySelectorAll('[data-case]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.case===view.object)));
-  root.querySelectorAll('[data-pose]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.pose===view.pose)));
-  root.querySelector('#sc-gallery-note').textContent='Placeholder · static crops from draft Figure 6. '+(['wheelchair','motorbike'].includes(view.object)?'The paper shows wheels a quarter turn on; a motion clip is still needed.':'These controls switch paper images; they do not run a reconstruction or simulation.');
- }
- root.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',()=>{view.object=button.dataset.case;renderGallery();}));
- root.querySelectorAll('[data-pose]').forEach(button=>button.addEventListener('click',()=>{view.pose=button.dataset.pose;renderGallery();}));
- const methods={agent:{title:'Plan, build, and repair.',copy:'The CAD agent plans components, writes them in parallel, clips them against the shell, and repairs the components responsible for failed checks.',media:'Figure 4 · CAD agent sequence'},seams:{title:'Find the boundary. Keep the detail.',copy:'Part outlines are refined to nearby shell creases. The shell is cut along these seams, and hidden CAD geometry completes each visual link.',media:'Figure 3 · outline & seam close-up'},hinges:{title:'A small shift can change the motion.',copy:'Candidate hinge pivots are scored on the hybrid model for penetration and detachment across opening poses. Contact and usual opening behavior help determine motion limits.',media:'Figure 5 · hinge search & motion curves'},verification:{title:'Check the asset, not just the image.',copy:'The pipeline checks link geometry, shell coverage, task joints, and motion sweeps before loading the final URDF in PyBullet. A check is not shown as passed until its result is available.',media:'Simulation playback & verification report'}};
- function setMethod(key){const item=methods[key];root.querySelector('#sc-method-title').textContent=item.title;root.querySelector('#sc-method-copy').textContent=item.copy;root.querySelector('#sc-method-media').textContent=item.media;root.querySelector('#sc-method-panel').setAttribute('aria-labelledby','sc-tab-'+key);root.querySelectorAll('[data-method]').forEach(button=>button.setAttribute('aria-selected',String(button.dataset.method===key)));}
- const methodButtons=[...root.querySelectorAll('[data-method]')];
- methodButtons.forEach((button,index)=>{
-  button.addEventListener('click',()=>setMethod(button.dataset.method));
-  button.addEventListener('keydown',event=>{
-   let next;
-   if(event.key==='ArrowRight')next=(index+1)%methodButtons.length;
-   if(event.key==='ArrowLeft')next=(index+methodButtons.length-1)%methodButtons.length;
-   if(event.key==='Home')next=0;
-   if(event.key==='End')next=methodButtons.length-1;
-   if(next===undefined)return;
-   event.preventDefault();methodButtons[next].focus();setMethod(methodButtons[next].dataset.method);
+(function () {
+  var root = document.getElementById('spark-clean');
+  if (!root) return;
+
+  // Objects without ground truth (paper Fig. 7 and its appendix figures); task sentences as the paper writes them.
+  var cases = {
+    wardrobe: { name: 'wardrobe', task: 'open both doors' },
+    chest: { name: 'chest of drawers', task: 'open the small upper left drawer' },
+    highboy: { name: 'highboy', task: 'open the upper left drawer' },
+    microwave: { name: 'microwave', task: 'open the microwave door' },
+    triptych: { name: 'triptych', task: 'close the two side wings' },
+    lamp: { name: 'desk lamp', task: 'raise the lamp arm and turn the shade' },
+    wheelchair: { name: 'wheelchair', task: 'turn the two large wheels' },
+    motorbike: { name: 'motorbike', task: 'turn the front and rear wheels' }
+  };
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function settle(video) {
+    if (reduceMotion) { video.removeAttribute('autoplay'); video.pause(); }
+  }
+  Array.prototype.forEach.call(root.querySelectorAll('video'), settle);
+
+  function setVideo(video, key) {
+    video.setAttribute('poster', 'assets/clips/' + key + '.jpg');
+    var source = video.querySelector('source');
+    source.setAttribute('src', 'assets/clips/' + key + '.mp4');
+    video.load();
+    if (!reduceMotion) {
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
+
+  var caseButtons = root.querySelectorAll('[data-case]');
+  function showCase(key) {
+    var item = cases[key];
+    var base = 'assets/examples/' + key + '/';
+    root.querySelector('#sc-task').textContent = '“' + item.task + '”';
+    var input = root.querySelector('#sc-input');
+    input.src = base + 'input.jpg';
+    input.alt = 'Input image: ' + item.name;
+    var proc = root.querySelector('#sc-procedura');
+    proc.src = base + 'procedura.jpg';
+    proc.alt = 'Procedura result: ' + item.name;
+    var art = root.querySelector('#sc-articraft');
+    art.src = base + 'articraft.jpg';
+    art.alt = 'Articraft result: ' + item.name;
+    var video = root.querySelector('#sc-final');
+    video.setAttribute('aria-label', 'SPARK+ result: ' + item.name + ', moving from rest to the goal of its task');
+    setVideo(video, key);
+    Array.prototype.forEach.call(caseButtons, function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-case') === key));
+    });
+  }
+  Array.prototype.forEach.call(caseButtons, function (b) {
+    b.addEventListener('click', function () { showCase(b.getAttribute('data-case')); });
   });
- });
 
-
+  var methods = {
+    seams: {
+      title: 'Find the boundary on the shell.',
+      copy: 'A generated surface rarely has a clean gap between a door and its frame. An image model draws a closed loop around the named part on a render of the shell; the loop is registered to the render and each piece moves to the strongest nearby crease, which gives the seam. Shown on a chest drawer.',
+      img: 'assets/figures/seams.jpg', w: 1300, h: 705,
+      alt: 'Outline guide on a chest drawer: the drawn loop on the render, and a close-up with the drawn line, the searched band and the refined seam.'
+    },
+    agent: {
+      title: 'Plan, write, clip and repair.',
+      copy: 'One call plans every link as components and gives each a box. The components are written and compiled in parallel, clipped to the inside of the shell, and a repair round rewrites only the components that fail a check. Shown on a motorbike.',
+      img: 'assets/figures/cad_agent.jpg', w: 1300, h: 840,
+      alt: 'CAD agent on a motorbike: (a) planned component boxes, (b) written components, (c) components clipped to the shell, (d) a repair round rewriting the failing components in red.'
+    },
+    hinges: {
+      title: 'A pivot a few millimetres off matters.',
+      copy: 'On the hybrid model, the pivot of a hinged part moves step by step to lower how far the part cuts into or comes away from its parent over the whole opening. On this wardrobe door the search lowers the largest detachment from 3.6 to 0.8 mm.',
+      img: 'assets/figures/joint_search.jpg', w: 1300, h: 1104,
+      alt: 'Hinge search on a wardrobe door: the open wardrobe, a top section through the hinge with the initial and searched pivots, and penetration and detachment over the opening for both pivots.'
+    }
+  };
+  var methodButtons = Array.prototype.slice.call(root.querySelectorAll('[data-method]'));
+  function setMethod(key) {
+    var m = methods[key];
+    root.querySelector('#sc-method-title').textContent = m.title;
+    root.querySelector('#sc-method-copy').textContent = m.copy;
+    var img = root.querySelector('#sc-method-img');
+    img.src = m.img; img.width = m.w; img.height = m.h; img.alt = m.alt;
+    root.querySelector('#sc-method-panel').setAttribute('aria-labelledby', 'sc-tab-' + key);
+    methodButtons.forEach(function (b) {
+      var on = b.getAttribute('data-method') === key;
+      b.setAttribute('aria-selected', String(on));
+      b.setAttribute('tabindex', on ? '0' : '-1');
+    });
+  }
+  methodButtons.forEach(function (b, i) {
+    b.addEventListener('click', function () { setMethod(b.getAttribute('data-method')); });
+    b.addEventListener('keydown', function (e) {
+      var n = methodButtons.length, next;
+      if (e.key === 'ArrowRight') next = (i + 1) % n;
+      else if (e.key === 'ArrowLeft') next = (i + n - 1) % n;
+      else if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = n - 1;
+      if (next === undefined) return;
+      e.preventDefault();
+      methodButtons[next].focus();
+      setMethod(methodButtons[next].getAttribute('data-method'));
+    });
+  });
 })();
