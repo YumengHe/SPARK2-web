@@ -2,59 +2,22 @@
   var root = document.getElementById('spark-clean');
   if (!root) return;
 
-  // Objects without ground truth (paper Fig. 7 and its appendix figures); task sentences as the paper writes them.
-  var cases = {
-    wardrobe: { name: 'wardrobe', task: 'open both doors' },
-    chest: { name: 'chest of drawers', task: 'open the small upper left drawer' },
-    highboy: { name: 'highboy', task: 'open the upper left drawer' },
-    microwave: { name: 'microwave', task: 'open the microwave door' },
-    triptych: { name: 'triptych', task: 'close the two side wings' },
-    lamp: { name: 'desk lamp', task: 'raise the lamp arm and turn the shade' },
-    wheelchair: { name: 'wheelchair', task: 'turn the two large wheels' },
-    motorbike: { name: 'motorbike', task: 'turn the front and rear wheels' }
-  };
-
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function settle(video) {
     if (reduceMotion) { video.removeAttribute('autoplay'); video.pause(); }
   }
   Array.prototype.forEach.call(root.querySelectorAll('video'), settle);
 
-  function setVideo(video, key) {
-    video.setAttribute('poster', 'assets/clips/' + key + '.jpg');
-    var source = video.querySelector('source');
-    source.setAttribute('src', 'assets/clips/' + key + '.mp4');
-    video.load();
-    if (!reduceMotion) {
-      var p = video.play();
-      if (p && p.catch) p.catch(function () {});
-    }
+  // Play each clip only while it is on screen.
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+    }, { rootMargin: '200px' });
+    Array.prototype.forEach.call(root.querySelectorAll('.sc-results-row video'), function (v) { v.removeAttribute('autoplay'); io.observe(v); });
   }
-
-  var caseButtons = root.querySelectorAll('[data-case]');
-  function showCase(key) {
-    var item = cases[key];
-    var base = 'assets/examples/' + key + '/';
-    root.querySelector('#sc-task').textContent = '“' + item.task + '”';
-    var input = root.querySelector('#sc-input');
-    input.src = base + 'input.jpg';
-    input.alt = 'Input image: ' + item.name;
-    var proc = root.querySelector('#sc-procedura');
-    proc.src = base + 'procedura.jpg';
-    proc.alt = 'Procedura result: ' + item.name;
-    var art = root.querySelector('#sc-articraft');
-    art.src = base + 'articraft.jpg';
-    art.alt = 'Articraft result: ' + item.name;
-    var video = root.querySelector('#sc-final');
-    video.setAttribute('aria-label', 'SPARK+ result: ' + item.name + ', moving from rest to the goal of its task');
-    setVideo(video, key);
-    Array.prototype.forEach.call(caseButtons, function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-case') === key));
-    });
-  }
-  Array.prototype.forEach.call(caseButtons, function (b) {
-    b.addEventListener('click', function () { showCase(b.getAttribute('data-case')); });
-  });
 
   var methods = {
     seams: {
