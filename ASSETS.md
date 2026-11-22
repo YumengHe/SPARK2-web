@@ -8,11 +8,6 @@ Every image and clip on the page comes from the SPARK+ paper or from renders of 
 |---|---|
 | `teaser.jpg` | Fig. 1, teaser: mantel clock, desk lamp, sunflower chest, balance scale, folding fan |
 | `overview.jpg` | Fig. 2, overview of the pipeline, rasterized from the vector figure |
-| `seams.jpg` | Fig. 4, outline guide, rasterized from the vector figure |
-| `cad_agent.jpg` | Fig. 5, CAD agent, rasterized from the vector figure |
-| `joint_search.jpg` | Fig. 6, hinge search, rasterized from the vector figure |
-
-The outline-guide, CAD-agent and hinge-search figures are retained in the repository but are not currently displayed.
 
 ## Results section (`assets/examples/<object>/`)
 
