@@ -25,7 +25,7 @@ Every clip renders the result that the corresponding paper figure draws (same ru
 
 | Clip | Content | Paper figure |
 |---|---|---|
-| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair` | SPARK+, rest to the goal of its task (lamp, highboy and triptych to the same fraction of the way as the paper figure) | Figs. 8, 12, 13 |
+| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair` | SPARK+, rest to the goal of its task (lamp and triptych to the same fraction of the way as the paper figure) | Figs. 8, 12, 13 |
 | `<object>_procedura` | Procedura's model, rest to the open end of every joint as drawn in the paper (same per-object fractions and limits); its continuous joints one full turn | Figs. 8, 12, 13 |
 | `<object>_articraft` | Articraft's model along its own exported animation, from q = 0 to its open pose; its poster is the pose of the paper figure (q = 0 for the triptych) | Figs. 8, 12, 13 |
 | `car_wheels`, `car_hood`, `car_door` | one car, one run per task sentence, cameras of the paper figure, one scale for the three clips | Fig. 3 |
