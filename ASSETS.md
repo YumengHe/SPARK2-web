@@ -30,7 +30,7 @@ Every clip renders the result that the corresponding paper figure draws (same ru
 | `<object>_articraft` | Articraft's model along its own exported animation, from q = 0 to its open pose; its poster is the pose of the paper figure (q = 0 for the triptych) | Figs. 8, 12, 13 |
 | `car_wheels`, `car_hood`, `car_door` | one car, one run per task sentence, cameras of the paper figure, one scale for the three clips | Fig. 3 |
 | `mw_door`, `mw_knob`, `mw_doorknob`, `mw_keys` | one microwave shell, one run per task sentence, one camera and crop for the four clips; the buttons travel 2 mm | Fig. 11 |
-| `bulb` | helical joint: three turns and a 10.8 mm rise, parts coloured as in the paper figure (gold stripe on the bulb), dashed line at the top of the bulb at rest | Fig. 10 |
+| `bulb` | helical joint on a SPARK+ result made from a photo of a light bulb in its socket (Wikimedia Commons, "00102 Lampada a incandescenza", CC BY 4.0, rotated upright): three turns and a 10.8 mm rise, textured as generated, same studio as the other clips | |
 | `sunflower`, `clock` | SPARK+ (joint types) | |
 
 `car_input.jpg` and `mw_input.jpg` are the input images, cropped as in the paper figures.
