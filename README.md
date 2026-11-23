@@ -17,7 +17,7 @@ Open `http://127.0.0.1:8767/`.
 ## Page structure
 
 1. Bold title beginning with SPARK+, followed by an anonymous author line.
-2. Overview: the paper's teaser figure, a shortened abstract and the three contributions.
+2. Overview: the paper's teaser figure, a shortened abstract, the three-minute supplementary video (with sound, played on request) and the three contributions.
 3. Method: the overview figure and four stages.
 4. Results on objects without ground truth: input image and motion clips of Procedura, Articraft and SPARK+, all seven objects shown together.
 5. Task as input: one car and one microwave, one motion clip per task sentence.

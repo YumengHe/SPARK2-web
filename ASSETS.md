@@ -53,6 +53,8 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 
 ## Other files
 
+`assets/video.mp4` is the supplementary video (1920x1080, 30 fps, synthesised narration, burned-in captions), assembled from the clips and paper figures listed above; `assets/video_poster.jpg` is its frame at 4 s.
+
 `favicon.svg` is the supplied SVG: an S assembled from five coloured parts, with a plus at the upper right and a transparent background.
 
 Typography uses the device's installed Georgia and Avenir Next fonts, with system fallbacks. No font files are bundled or downloaded.

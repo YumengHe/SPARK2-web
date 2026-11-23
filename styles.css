@@ -50,6 +50,8 @@ body{margin:0;font-family:"Avenir Next",Avenir,Arial,sans-serif}
 #spark-clean .sc-wide-figure{margin:0 auto 36px;max-width:1040px}
 #spark-clean .sc-wide-figure img{display:block;width:100%;height:auto;border-radius:6px}
 #spark-clean .sc-wide-figure.sc-plain img{border-radius:0}
+#spark-clean .sc-wide-figure.sc-video{margin-top:36px}
+#spark-clean .sc-wide-figure video{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
 #spark-clean .sc-spaced{margin-top:48px;margin-bottom:0}
 #spark-clean .sc-idea-row{margin-top:44px}
 #spark-clean .sc-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

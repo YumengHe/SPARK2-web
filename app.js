@@ -6,7 +6,7 @@
   function settle(video) {
     if (reduceMotion) { video.removeAttribute('autoplay'); video.pause(); }
   }
-  Array.prototype.forEach.call(root.querySelectorAll('video'), settle);
+  Array.prototype.forEach.call(root.querySelectorAll('video.sc-clip'), settle);
 
   // Play each clip only while it is on screen.
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -16,6 +16,6 @@
         if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
       });
     }, { rootMargin: '200px' });
-    Array.prototype.forEach.call(root.querySelectorAll('video'), function (v) { v.removeAttribute('autoplay'); io.observe(v); });
+    Array.prototype.forEach.call(root.querySelectorAll('video.sc-clip'), function (v) { v.removeAttribute('autoplay'); io.observe(v); });
   }
 })();
