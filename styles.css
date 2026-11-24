@@ -1,6 +1,6 @@
 html{color-scheme:light;background:#fff}
-body{margin:0;font-family:"Avenir Next",Avenir,Arial,sans-serif}
-#spark-clean{--sc-ink:#292a30;--sc-muted:#71717b;--sc-line:#e9e8ed;--sc-accent:#9B93C9;--sc-space:72px;background:#fff;color:var(--sc-ink);font:400 16px/1.7 "Avenir Next",Avenir,Arial,sans-serif;color-scheme:light;width:100%}
+body{margin:0;font-family:Georgia,"Times New Roman",serif}
+#spark-clean{--sc-ink:#292a30;--sc-muted:#71717b;--sc-line:#e9e8ed;--sc-accent:#9B93C9;--sc-space:72px;background:#fff;color:var(--sc-ink);font:400 16px/1.7 Georgia,"Times New Roman",serif;color-scheme:light;width:100%}
 #spark-clean *{box-sizing:border-box}
 #spark-clean h1,#spark-clean h2,#spark-clean h3,#spark-clean p,#spark-clean figure{margin:0}
 #spark-clean h1,#spark-clean h2,#spark-clean h3{font-family:Georgia,"Times New Roman",serif}
