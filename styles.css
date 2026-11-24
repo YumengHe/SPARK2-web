@@ -24,8 +24,8 @@ body{margin:0;font-family:"Avenir Next",Avenir,Arial,sans-serif}
 #spark-clean .sc-idea p{font-size:13px;color:var(--sc-muted);line-height:1.8}
 
 #spark-clean .sc-gallery-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid var(--sc-line);padding:9px 0 15px;margin-top:4px}
-#spark-clean .sc-task-text{font-size:13px;color:var(--sc-ink)}
-#spark-clean .sc-task-text span{color:var(--sc-muted);margin-right:9px}
+#spark-clean .sc-task-text{font-size:17px;line-height:1.5;color:var(--sc-ink)}
+#spark-clean .sc-task-text span{color:var(--sc-ink);font-weight:500;margin-right:12px}
 #spark-clean .sc-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:12px 0 0}
 #spark-clean .sc-results-head{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;text-align:center;font-size:13px;color:var(--sc-muted);padding-bottom:12px;border-bottom:1px solid var(--sc-line)}
 #spark-clean .sc-results-head .sc-ours-label{color:#756baf}
@@ -55,7 +55,7 @@ body{margin:0;font-family:"Avenir Next",Avenir,Arial,sans-serif}
 #spark-clean .sc-spaced{margin-top:48px;margin-bottom:0}
 #spark-clean .sc-idea-row{margin-top:44px}
 #spark-clean .sc-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-#spark-clean .sc-task-sentence{color:var(--sc-ink)!important;font-style:italic;margin-right:0!important}
+#spark-clean .sc-task-sentence{color:var(--sc-ink)!important;font-style:italic;font-weight:400!important;margin-right:0!important}
 #spark-clean .sc-gallery figure.sc-ours figcaption{color:#756baf}
 #spark-clean .sc-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 #spark-clean .sc-results{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -121,7 +121,7 @@ body{margin:0;font-family:"Avenir Next",Avenir,Arial,sans-serif}
 #spark-clean .sc-task-row img,#spark-clean .sc-task-row video{width:100%;height:190px;display:block;object-fit:contain;background:#fff}
 #spark-clean .sc-task-row .sc-task-input img{background:none}
 #spark-clean .sc-task-row .sc-task-input img{border-right:1px solid var(--sc-line);padding-right:18px}
-#spark-clean .sc-task-row figcaption{text-align:center;font-size:13px;font-style:italic;color:var(--sc-ink);margin-top:10px;line-height:1.5;text-wrap:balance}
+#spark-clean .sc-task-row figcaption{text-align:center;font-size:15px;font-style:italic;color:var(--sc-ink);margin-top:10px;line-height:1.5;text-wrap:balance}
 #spark-clean .sc-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 #spark-clean .sc-sim-grid video{width:100%;height:auto;display:block;aspect-ratio:6/5;object-fit:cover;background:#e7e9ee}
 #spark-clean .sc-qual{display:grid;grid-template-columns:22px repeat(8,minmax(0,1fr));gap:4px 6px;min-width:760px;align-items:center}
