@@ -25,7 +25,7 @@ Every clip renders the result that the corresponding paper figure draws (same ru
 
 | Clip | Content | Paper figure |
 |---|---|---|
-| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair` | SPARK+, rest to the goal of its task (lamp to the same fraction of the way as the paper figure; highboy to its limit; triptych until its two wings meet, with the poster at half way) | Figs. 8, 12, 13 |
+| `wardrobe`, `chest`, `highboy`, `microwave`, `triptych`, `lamp`, `wheelchair` | SPARK+, rest to the goal of its task (lamp to the same fraction of the way as the paper figure; highboy to its limit; triptych to nine tenths of the way, with the poster at half way) | Figs. 8, 12, 13 |
 | `<object>_procedura` | Procedura's model, rest to the open end of every joint as drawn in the paper (same per-object fractions and limits); its continuous joints one full turn | Figs. 8, 12, 13 |
 | `<object>_articraft` | Articraft's model along its own exported animation, from q = 0 to its open pose; its poster is the pose of the paper figure (q = 0 for the triptych) | Figs. 8, 12, 13 |
 | `car_wheels`, `car_hood`, `car_door` | one car, one run per task sentence, cameras of the paper figure, one scale for the three clips | Fig. 3 |
@@ -53,7 +53,7 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 
 ## Other files
 
-`video.mp4` (repository root) is the supplementary video (1920x1080, 30 fps, synthesised narration, burned-in captions), assembled from the clips and paper figures listed above; `assets/video_poster.jpg` is its frame at 2 s (the title card).
+`video.mp4` (repository root) is the supplementary video (1920x1080, 30 fps, synthesised narration, burned-in captions), assembled from the clips and paper figures listed above; `assets/video_poster.jpg` is its title card at 2 s, without the caption.
 
 `favicon.svg` is the supplied SVG: an S assembled from five coloured parts, with a plus at the upper right and a transparent background.
 
