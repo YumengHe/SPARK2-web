@@ -26,11 +26,13 @@ Open `http://127.0.0.1:8767/`.
 8. Evaluation: the qualitative comparison on ground-truth objects, one motion clip per method and object, with its joint error.
 9. Simulation: PyBullet loading and four MuJoCo clips of a fingertip operating a joint.
 
-Without JavaScript the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With JavaScript, content also fades in as it reaches the screen, and the gallery gets its arrow buttons and position line. With reduced motion requested, clips stay on their poster frame and nothing fades.
+Without JavaScript the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With JavaScript, content also fades in as it reaches the screen, and the gallery becomes a slowly drifting loop with arrow buttons. With reduced motion requested, clips stay on their poster frame and nothing fades.
 
 ## Gallery
 
-Each gallery entry is one `<figure>` line inside `<div class="sc-showcase">` in `index.html`. To add one, put the clip and its poster in `assets/clips/` (`g_<object>.mp4` and `g_<object>.jpg`), copy an existing line and change the file names, the `aria-label` and the task sentence. To remove one, delete its line. The lines show in file order as one row of cards that scrolls sideways (touch, trackpad, the arrow buttons or the arrow keys), so any number of entries works and nothing else needs to change.
+Each gallery entry is one `<figure>` line inside `<div class="sc-showcase">` in `index.html`. To add one, put the clip and its poster in `assets/clips/` (`g_<object>.mp4` and `g_<object>.jpg`), copy an existing line and change the file names, the `aria-label` and the task sentence. To remove one, delete its line. The lines show in file order; any number of entries works and nothing else needs to change.
+
+With JavaScript the row is an endless loop: `app.js` adds hidden copies of the entries on both sides and wraps the position by one full set, so the last card is followed by the first. The row drifts slowly to the left (`SPEED` in `app.js`, px per second) and stops while the mouse is over it, while it is being dragged, while the keyboard is in it, while it is off screen or the tab is hidden, and when the pause button below it is pressed; it starts again 1.5 s after (`RESUME_MS`). The arrow buttons and arrow keys move one card; touch, mouse drag and sideways trackpad scrolling move it freely. With reduced motion requested it does not drift. Without JavaScript the row is a plain sideways-scrolling strip.
 
 ## Files
 
