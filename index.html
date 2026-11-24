@@ -67,7 +67,7 @@
   </section>
   <section class="sc-section" id="sc-results">
     <div class="sc-container">
-      <div class="sc-heading"><h2>Results</h2><p>Objects without ground truth.</p></div>
+      <div class="sc-heading"><h2>Results</h2><p>Qualitative results on objects without ground truth. Every result is shown open with its own appearance.</p></div>
       <div class="sc-results-grid">
         <div class="sc-results-head"><span>Input image</span><span>Procedura</span><span>Articraft</span><span class="sc-ours-label">SPARK+</span></div>
         <div class="sc-results-row"><p class="sc-task-text"><span>Wardrobe</span><span class="sc-task-sentence">“open both doors”</span></p><div class="sc-gallery"><figure><img src="assets/examples/wardrobe/input.jpg" alt="Input image: wardrobe" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wardrobe_procedura.jpg" aria-label="Procedura result: wardrobe, moving its own joints"><source src="assets/clips/wardrobe_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wardrobe_articraft.jpg" aria-label="Articraft result: wardrobe, moving its own joints"><source src="assets/clips/wardrobe_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wardrobe.jpg" aria-label="SPARK+ result: wardrobe, moving from rest to the goal of its task"><source src="assets/clips/wardrobe.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
@@ -82,14 +82,14 @@
   </section>
   <section class="sc-section" id="sc-tasks">
     <div class="sc-container">
-      <div class="sc-heading"><h2>Task as input</h2><p>A part named in the task becomes a jointed link whatever its size. Only the task targets and the parts carrying them move, so joints and hidden geometry appear only where needed.</p></div>
+      <div class="sc-heading"><h2>Task as input</h2><p>One image, several tasks. Each row comes from the same image and shell, with the task sentence under each result.</p></div>
       <div class="sc-task-row sc-task-3"><figure class="sc-task-input"><img src="assets/clips/car_input.jpg" alt="Input image: a car" loading="lazy" decoding="async"></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_wheels.jpg" aria-label="Car by SPARK+ for the task rotate the four wheels: the four wheels turn"><source src="assets/clips/car_wheels.mp4" type="video/mp4"></video><figcaption>“rotate the four wheels”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_hood.jpg" aria-label="Car by SPARK+ for the task open the hood: the hood opens"><source src="assets/clips/car_hood.mp4" type="video/mp4"></video><figcaption>“open the hood”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_door.jpg" aria-label="Car by SPARK+ for the task open the driver's door: the door opens"><source src="assets/clips/car_door.mp4" type="video/mp4"></video><figcaption>“open the driver's door”</figcaption></figure></div>
       <div class="sc-task-row sc-task-4"><figure class="sc-task-input"><img src="assets/clips/mw_input.jpg" alt="Input image: a stainless microwave" loading="lazy" decoding="async"></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_door.jpg" aria-label="Microwave by SPARK+ for the task open the door: the door opens"><source src="assets/clips/mw_door.mp4" type="video/mp4"></video><figcaption>“Open the microwave door.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_knob.jpg" aria-label="Microwave by SPARK+ for the task turn the knob: the knob turns"><source src="assets/clips/mw_knob.mp4" type="video/mp4"></video><figcaption>“Turn the knob on the control panel.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_doorknob.jpg" aria-label="Microwave by SPARK+ for the task open the door and turn the knob: both move"><source src="assets/clips/mw_doorknob.mp4" type="video/mp4"></video><figcaption>“Open the microwave door and turn the knob on the control panel.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_keys.jpg" aria-label="Microwave by SPARK+ for the task press the buttons: each of the 13 buttons moves in by 2 mm on its own prismatic joint"><source src="assets/clips/mw_keys.mp4" type="video/mp4"></video><figcaption>“Press the buttons on the control panel.”</figcaption></figure></div>
     </div>
   </section>
   <section class="sc-section" id="sc-motion">
     <div class="sc-container">
-      <div class="sc-heading"><h2>Joint types</h2><p>Parts that do not move are fixed to the link they sit on; every part the task moves gets one of four joint types.</p></div>
+      <div class="sc-heading"><h2>Joint types</h2><p>Revolute, prismatic, continuous and helical joints, each shown on one result with its task sentence.</p></div>
       <div class="sc-motion-grid">
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/microwave.jpg" aria-label="Microwave by SPARK+: the door swings open"><source src="assets/clips/microwave.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Revolute</div><h3>“open the microwave door”</h3></div></article>
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/sunflower.jpg" aria-label="Sunflower chest by SPARK+: the upper left drawer slides out"><source src="assets/clips/sunflower.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Prismatic</div><h3>“open the upper left drawer”</h3></div></article>
@@ -98,10 +98,9 @@
       </div>
     </div>
   </section>
-    <!-- Numbers: paper Tab. 2 (comparison on 100 ArticulateArena objects, best-fit registration); PyBullet / MuJoCo counts: Sec. 5 and App. C.4. -->
-  <section class="sc-section" id="sc-eval">
+      <section class="sc-section" id="sc-eval">
     <div class="sc-container">
-      <div class="sc-heading"><h2>Evaluation</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
+      <div class="sc-heading"><h2>Evaluation</h2><p>Qualitative results on ground-truth objects of ArticulateArena. The input is the benchmark’s render at rest, and every model is shown opening.</p></div>
       <div class="sc-scroll sc-spaced">
         <div class="sc-qual" role="group" aria-label="Qualitative comparison on six ground-truth objects of ArticulateArena">
         <span></span><span>Input render</span><span>Ground truth</span><span>URDFormer</span><span>SPARK</span><span>Articraft</span><span>Procedura</span><span>Ditto</span><span class="sc-ours-label">SPARK+</span>
@@ -117,16 +116,9 @@
   </section>
   <section class="sc-section" id="sc-sim">
     <div class="sc-container">
-      <div class="sc-heading"><h2>Simulation</h2></div>
-      <div class="sc-split">
+      <div class="sc-heading"><h2>Simulation</h2><p>A suction fingertip opens a door, closes a lid, pulls out a drawer and turns a knob in MuJoCo.</p></div>
+      <div class="sc-sim-wide">
         <div class="sc-sim-grid"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/sim/door.jpg" aria-label="A suction fingertip in MuJoCo opens a microwave door"><source src="assets/sim/door.mp4" type="video/mp4"></video><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/sim/lid.jpg" aria-label="A suction fingertip in MuJoCo closes a lid"><source src="assets/sim/lid.mp4" type="video/mp4"></video><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/sim/drawer.jpg" aria-label="A suction fingertip in MuJoCo pulls out a drawer"><source src="assets/sim/drawer.mp4" type="video/mp4"></video><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/sim/knob.jpg" aria-label="A suction fingertip in MuJoCo turns a knob"><source src="assets/sim/knob.mp4" type="video/mp4"></video></div>
-        <div class="sc-split-copy">
-          <p>The CAD solids serve as the collision bodies, and every asset is written as a URDF.</p>
-          <dl class="sc-stats">
-            <div><dt>108 / 108</dt><dd>assets in our run statistics load in PyBullet as written</dd></div>
-            <div><dt>109 / 113</dt><dd>movable joints driven through at least 90% of their range by a simulated end effector in MuJoCo</dd></div>
-          </dl>
-        </div>
       </div>
     </div>
   </section>
