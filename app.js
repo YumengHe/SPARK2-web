@@ -18,4 +18,16 @@
     }, { rootMargin: '200px' });
     Array.prototype.forEach.call(root.querySelectorAll('video.sc-clip'), function (v) { v.removeAttribute('autoplay'); io.observe(v); });
   }
+
+  // Fade sections in as they reach the screen; without this script, or with reduced motion, everything is shown as is.
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var parts = root.querySelectorAll('.sc-heading, .sc-wide-figure, .sc-abstract-copy, .sc-stage, .sc-results-head, .sc-results-row, .sc-task-row, .sc-motion-grid article, .sc-scroll, .sc-split > *');
+    var shown = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sc-in'); shown.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+    Array.prototype.forEach.call(parts, function (el) { el.classList.add('sc-reveal'); shown.observe(el); });
+    root.classList.add('sc-anim');
+  }
 })();

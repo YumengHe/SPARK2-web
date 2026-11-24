@@ -57,4 +57,4 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 
 `favicon.svg` is the supplied SVG: an S assembled from five coloured parts, with a plus at the upper right and a transparent background.
 
-Typography uses the device's installed Georgia and Avenir Next fonts, with system fallbacks. No font files are bundled or downloaded.
+Typography uses the device's installed Georgia, with Times New Roman as fallback. No font files are bundled or downloaded.

@@ -20,7 +20,7 @@
       <p class="sc-authors">Anonymous Authors</p>
     </section>
   </div>
-  <section class="sc-soft-band sc-section" id="sc-overview">
+  <section class="sc-section" id="sc-overview">
     <div class="sc-container">
       <div class="sc-heading"><h2>Overview</h2></div>
       <figure class="sc-wide-figure">
@@ -32,8 +32,8 @@
       </figure>
     </div>
   </section>
-  <div class="sc-container">
-    <section class="sc-section" id="sc-method">
+  <section class="sc-section" id="sc-method">
+    <div class="sc-container">
       <div class="sc-heading"><h2>Method</h2></div>
       <figure class="sc-wide-figure sc-plain">
         <img src="assets/figures/overview.jpg" width="2400" height="565" alt="Pipeline on a mantel clock with the task of turning its two hands: image to parts and a generated shell; hybrid links from an outline guide, a CAD agent writing 26 components, and cutting and stitching skin with CAD; joints and verification ending in a URDF that passes its checks in PyBullet." loading="lazy" decoding="async">
@@ -44,9 +44,10 @@
         <article class="sc-stage" style="--tone:#7FA6CF"><div class="sc-stage-no">03</div><h3>CAD agent</h3><p>One call plans all links as components, which are written in parallel as OpenSCAD, clipped to the shell and repaired over rounds.</p></article>
         <article class="sc-stage" style="--tone:#6FB5AE"><div class="sc-stage-no">04</div><h3>Stitch and joint</h3><p>The shell is cut along the outlines and each piece is joined with its CAD. Joints are placed, searched and limited, then verified and exported as URDF.</p></article>
       </div>
-    </section>
-    <hr class="sc-rule">
-    <section class="sc-section" id="sc-results">
+    </div>
+  </section>
+  <section class="sc-section" id="sc-results">
+    <div class="sc-container">
       <div class="sc-heading"><h2>Results</h2><p>Objects without ground truth.</p></div>
       <div class="sc-results-grid">
         <div class="sc-results-head"><span>Input image</span><span>Procedura</span><span>Articraft</span><span class="sc-ours-label">SPARK+</span></div>
@@ -58,17 +59,17 @@
         <div class="sc-results-row"><p class="sc-task-text"><span>Desk lamp</span><span class="sc-task-sentence">“raise the lamp arm and turn the shade”</span></p><div class="sc-gallery"><figure><img src="assets/examples/lamp/input.jpg" alt="Input image: desk lamp" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp_procedura.jpg" aria-label="Procedura result: desk lamp, moving its own joints"><source src="assets/clips/lamp_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp_articraft.jpg" aria-label="Articraft result: desk lamp, moving its own joints"><source src="assets/clips/lamp_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/lamp.jpg" aria-label="SPARK+ result: desk lamp, moving from rest to the goal of its task"><source src="assets/clips/lamp.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
         <div class="sc-results-row"><p class="sc-task-text"><span>Wheelchair</span><span class="sc-task-sentence">“turn the two large wheels”</span></p><div class="sc-gallery"><figure><img src="assets/examples/wheelchair/input.jpg" alt="Input image: wheelchair" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair_procedura.jpg" aria-label="Procedura result: wheelchair, moving its own joints"><source src="assets/clips/wheelchair_procedura.mp4" type="video/mp4"></video><figcaption>Procedura</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair_articraft.jpg" aria-label="Articraft result: wheelchair, moving its own joints"><source src="assets/clips/wheelchair_articraft.mp4" type="video/mp4"></video><figcaption>Articraft</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/wheelchair.jpg" aria-label="SPARK+ result: wheelchair, moving from rest to the goal of its task"><source src="assets/clips/wheelchair.mp4" type="video/mp4"></video><figcaption>SPARK+</figcaption></figure></div></div>
       </div>
-    </section>
-  </div>
-  <section class="sc-soft-band sc-section" id="sc-tasks">
+    </div>
+  </section>
+  <section class="sc-section" id="sc-tasks">
     <div class="sc-container">
       <div class="sc-heading"><h2>Task as input</h2><p>A part named in the task becomes a jointed link whatever its size. Only the task targets and the parts carrying them move, so joints and hidden geometry appear only where needed.</p></div>
       <div class="sc-task-row sc-task-3"><figure class="sc-task-input"><img src="assets/clips/car_input.jpg" alt="Input image: a car" loading="lazy" decoding="async"></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_wheels.jpg" aria-label="Car by SPARK+ for the task rotate the four wheels: the four wheels turn"><source src="assets/clips/car_wheels.mp4" type="video/mp4"></video><figcaption>“rotate the four wheels”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_hood.jpg" aria-label="Car by SPARK+ for the task open the hood: the hood opens"><source src="assets/clips/car_hood.mp4" type="video/mp4"></video><figcaption>“open the hood”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/car_door.jpg" aria-label="Car by SPARK+ for the task open the driver's door: the door opens"><source src="assets/clips/car_door.mp4" type="video/mp4"></video><figcaption>“open the driver's door”</figcaption></figure></div>
       <div class="sc-task-row sc-task-4"><figure class="sc-task-input"><img src="assets/clips/mw_input.jpg" alt="Input image: a stainless microwave" loading="lazy" decoding="async"></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_door.jpg" aria-label="Microwave by SPARK+ for the task open the door: the door opens"><source src="assets/clips/mw_door.mp4" type="video/mp4"></video><figcaption>“Open the microwave door.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_knob.jpg" aria-label="Microwave by SPARK+ for the task turn the knob: the knob turns"><source src="assets/clips/mw_knob.mp4" type="video/mp4"></video><figcaption>“Turn the knob on the control panel.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_doorknob.jpg" aria-label="Microwave by SPARK+ for the task open the door and turn the knob: both move"><source src="assets/clips/mw_doorknob.mp4" type="video/mp4"></video><figcaption>“Open the microwave door and turn the knob on the control panel.”</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/mw_keys.jpg" aria-label="Microwave by SPARK+ for the task press the buttons: each of the 13 buttons moves in by 2 mm on its own prismatic joint"><source src="assets/clips/mw_keys.mp4" type="video/mp4"></video><figcaption>“Press the buttons on the control panel.”</figcaption></figure></div>
     </div>
   </section>
-  <div class="sc-container">
-    <section class="sc-section" id="sc-motion">
+  <section class="sc-section" id="sc-motion">
+    <div class="sc-container">
       <div class="sc-heading"><h2>Joint types</h2><p>Parts that do not move are fixed to the link they sit on; every part the task moves gets one of four joint types.</p></div>
       <div class="sc-motion-grid">
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/microwave.jpg" aria-label="Microwave by SPARK+: the door swings open"><source src="assets/clips/microwave.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Revolute</div><h3>“open the microwave door”</h3></div></article>
@@ -76,10 +77,11 @@
         <article><video class="sc-clip" autoplay muted loop playsinline preload="metadata" poster="assets/clips/clock.jpg" aria-label="Mantel clock by SPARK+: the two hands turn"><source src="assets/clips/clock.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Continuous</div><h3>“turn the two hands”</h3></div></article>
         <article><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/clips/bulb.jpg" aria-label="Light bulb by SPARK+: the bulb turns three times and rises 10.8 mm, made from a photo of a bulb in a brass socket"><source src="assets/clips/bulb.mp4" type="video/mp4"></video><div><div class="sc-joint-label">Helical</div><h3>“Unscrew the light bulb from its socket.”</h3></div></article>
       </div>
-    </section>
-    <hr class="sc-rule">
+    </div>
+  </section>
     <!-- Numbers: paper Tab. 2 (comparison on 100 ArticulateArena objects, best-fit registration); PyBullet / MuJoCo counts: Sec. 5 and App. C.4. -->
-    <section class="sc-section" id="sc-eval">
+  <section class="sc-section" id="sc-eval">
+    <div class="sc-container">
       <div class="sc-heading"><h2>Evaluation</h2><p>On 100 objects of ArticulateArena, SPARK+ gives the shapes closest to the ground truth and keeps the look of the input image, with joint error on par with the strongest CAD pipelines.</p></div>
       <div class="sc-scroll sc-spaced">
         <div class="sc-qual" role="group" aria-label="Qualitative comparison on six ground-truth objects of ArticulateArena">
@@ -92,9 +94,9 @@
         <b>Toilet</b><figure><img src="assets/qual/toilet_input.jpg" alt="Input render: toilet" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_gt.jpg" aria-label="Ground truth: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_gt.mp4" type="video/mp4"></video><figcaption></figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_URDFormer.jpg" aria-label="URDFormer: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_URDFormer.mp4" type="video/mp4"></video><figcaption><i>E</i> = 1.50</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_SPARK.jpg" aria-label="SPARK: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_SPARK.mp4" type="video/mp4"></video><figcaption><i>E</i> = 1.54</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_articraft.jpg" aria-label="Articraft: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_articraft.mp4" type="video/mp4"></video><figcaption><i>E</i> = 0.17</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_procedura.jpg" aria-label="Procedura: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_procedura.mp4" type="video/mp4"></video><figcaption><i>E</i> = 0.18</figcaption></figure><figure><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_Ditto.jpg" aria-label="Ditto: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_Ditto.mp4" type="video/mp4"></video><figcaption><i>E</i> = 1.39</figcaption></figure><figure class="sc-ours"><video class="sc-clip" autoplay muted loop playsinline preload="none" poster="assets/qual/toilet_ours.jpg" aria-label="SPARK+: toilet, moving from rest to the pose of the paper figure"><source src="assets/qual/toilet_ours.mp4" type="video/mp4"></video><figcaption><i>E</i> = 0.13</figcaption></figure>
         </div>
       </div>
-    </section>
-  </div>
-  <section class="sc-soft-band sc-section" id="sc-sim">
+    </div>
+  </section>
+  <section class="sc-section" id="sc-sim">
     <div class="sc-container">
       <div class="sc-heading"><h2>Simulation</h2></div>
       <div class="sc-split">
