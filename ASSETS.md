@@ -50,7 +50,6 @@ Clips are H.264, yuv420p, silent; 24 fps (clips that only turn: 12 fps, two turn
 | 13 buttons, each on its own prismatic joint (image alternative of the microwave figure) | Sec. 3.1 and App. B.8 |
 | 3.6 mm per turn, three turns, 10.8 mm rise | App. A.8, Fig. 10 |
 | 26 components (image alternative of the overview figure) | Fig. 2 |
-| 108 / 108 load in PyBullet; 109 / 113 joints driven through at least 90% of their range in MuJoCo | Sec. 5 and App. C.4 |
 
 ## Other files
 
