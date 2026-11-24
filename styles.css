@@ -57,7 +57,7 @@ body{margin:0;background:#fff;font-family:Georgia,"Times New Roman",serif;-webki
 #spark-clean .sc-wide-figure.sc-plain img{border-radius:0;box-shadow:none}
 #spark-clean .sc-wide-figure.sc-video{margin:56px auto 0}
 #spark-clean img{object-fit:contain}
-#spark-clean .sc-abstract-copy{max-width:860px;margin:0 auto;font-size:17.5px;line-height:1.9;color:var(--sc-text);text-align:justify}
+#spark-clean .sc-abstract-copy{max-width:none;margin:0;font-size:17.5px;line-height:1.9;color:var(--sc-text);text-align:justify}
 #spark-clean .sc-abstract-copy strong{color:var(--sc-ink);font-weight:700}
 
 /* A white card around each clip: rounded, hairline border, lifts slightly on hover */
