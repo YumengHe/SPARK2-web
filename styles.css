@@ -43,11 +43,6 @@ body{margin:0;background:#fff;font-family:Georgia,"Times New Roman",serif;-webki
 #spark-clean .sc-loop .sc-container{overflow:hidden}
 #spark-clean .sc-loop .sc-showcase{overflow:visible;scroll-snap-type:none;touch-action:pan-y;user-select:none;-webkit-user-select:none;will-change:transform;cursor:grab}
 #spark-clean .sc-loop.sc-dragging .sc-showcase{cursor:grabbing}
-#spark-clean .sc-gal-toggle{display:grid;place-items:center;width:30px;height:30px;margin:4px auto 0;padding:0;border:1px solid var(--sc-line);border-radius:50%;background:#fff;color:var(--sc-muted);cursor:pointer;transition:color .25s ease,border-color .25s ease}
-#spark-clean .sc-gal-toggle:hover{color:var(--sc-ink);border-color:#dcdae4}
-#spark-clean .sc-gal-toggle:focus-visible{outline:2px solid #9B93C9;outline-offset:2px}
-#spark-clean .sc-gal-toggle svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-#spark-clean .sc-gal-toggle path[d^="M8"]{fill:currentColor;stroke-width:1.2}
 #spark-clean .sc-showcase-section [hidden]{display:none}
 @media(hover:none){#spark-clean .sc-gal-btn{display:none}}
 
@@ -163,7 +158,6 @@ body{margin:0;background:#fff;font-family:Georgia,"Times New Roman",serif;-webki
 #spark-clean [hidden]{display:none!important}
 .skip-link{position:absolute;left:16px;top:-80px;z-index:10;padding:12px 18px;background:#fff;color:#292a30;border:1px solid #9B93C9;border-radius:8px}
 .skip-link:focus{top:12px}
-@media(pointer:coarse){#spark-clean button,#spark-clean summary,#spark-clean a{min-height:44px}#spark-clean .sc-gal-toggle{width:44px}}
 
 @media(max-width:900px){
  #spark-clean .sc-motion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}

@@ -60,7 +60,7 @@
     var next = arrow('sc-gal-next', 'Next', 'M9 5l7 7-7 7');
     var ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>';
     var ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>';
-    var toggle = reduceMotion ? null : button('sc-gal-toggle', 'Pause gallery', ICON_PAUSE);
+    var toggle = null;       // no pause button: the gallery stops under the mouse and goes on when it leaves
 
     var before = 1, after = 0;      // copied sets on each side of the originals
     var step = 1, W = 1, view = 1;  // card pitch, width of one set, visible width
@@ -143,9 +143,9 @@
       kick();
     });
 
-    // Pause while a mouse is over the gallery or the keyboard is in it; resume a moment after it leaves.
-    holder.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; kick(); } });
-    holder.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; hold(); } });
+    // Stop at once while a mouse is over the gallery and go on at once when it leaves; the keyboard pauses it too.
+    holder.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; v = 0; kick(); } });
+    holder.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; holdUntil = 0; if (auto() && !tween) v = SPEED; kick(); } });
     holder.addEventListener('focusin', function (e) {
       var t = e.target;
       if (t !== toggle && t.matches && t.matches(':focus-visible')) { focused = true; kick(); }
