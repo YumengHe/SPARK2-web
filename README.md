@@ -26,11 +26,11 @@ Open `http://127.0.0.1:8767/`.
 8. Evaluation: the qualitative comparison on ground-truth objects, one motion clip per method and object, with its joint error.
 9. Simulation: PyBullet loading and four MuJoCo clips of a fingertip operating a joint.
 
-Without JavaScript the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With JavaScript, content also fades in as it reaches the screen. With reduced motion requested, clips stay on their poster frame and nothing fades.
+Without JavaScript the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With JavaScript, content also fades in as it reaches the screen, and the gallery gets its arrow buttons and position line. With reduced motion requested, clips stay on their poster frame and nothing fades.
 
 ## Gallery
 
-Each gallery entry is one `<figure>` line inside `<div class="sc-showcase">` in `index.html`. To add one, put the clip and its poster in `assets/clips/` (`g_<object>.mp4` and `g_<object>.jpg`), copy an existing line and change the file names, the `aria-label` and the task sentence. To remove one, delete its line; the grid picks its column count from the number of entries so that the rows stay even.
+Each gallery entry is one `<figure>` line inside `<div class="sc-showcase">` in `index.html`. To add one, put the clip and its poster in `assets/clips/` (`g_<object>.mp4` and `g_<object>.jpg`), copy an existing line and change the file names, the `aria-label` and the task sentence. To remove one, delete its line. The lines show in file order as one row of cards that scrolls sideways (touch, trackpad, the arrow buttons or the arrow keys), so any number of entries works and nothing else needs to change.
 
 ## Files
 
