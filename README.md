@@ -17,15 +17,20 @@ Open `http://127.0.0.1:8767/`.
 ## Page structure
 
 1. Bold title beginning with SPARK+, followed by an anonymous author line.
-2. Overview: the paper's teaser figure, a shortened abstract and the three-minute video (with sound, played on request).
-3. Method: the overview figure and four stages.
-4. Results on objects without ground truth: input image and motion clips of Procedura, Articraft and SPARK+, all seven objects shown together.
-5. Task as input: one car and one microwave, one motion clip per task sentence.
-6. Joint types: revolute, prismatic, continuous and helical motion clips.
-7. Evaluation: the qualitative comparison on ground-truth objects, one motion clip per method and object, with its joint error.
-8. Simulation: PyBullet loading and four MuJoCo clips of a fingertip operating a joint.
+2. Gallery: SPARK+ motion clips, each with its task sentence.
+3. Overview: the paper's teaser figure, a shortened abstract and the three-minute video (with sound, played on request).
+4. Method: the overview figure and four stages.
+5. Results on objects without ground truth: input image and motion clips of Procedura, Articraft and SPARK+, all seven objects shown together.
+6. Task as input: one car and one microwave, one motion clip per task sentence.
+7. Joint types: revolute, prismatic, continuous and helical motion clips.
+8. Evaluation: the qualitative comparison on ground-truth objects, one motion clip per method and object, with its joint error.
+9. Simulation: PyBullet loading and four MuJoCo clips of a fingertip operating a joint.
 
 Without JavaScript the clips play from their `autoplay` attributes; with JavaScript a clip plays only while it is on screen. With JavaScript, content also fades in as it reaches the screen. With reduced motion requested, clips stay on their poster frame and nothing fades.
+
+## Gallery
+
+Each gallery entry is one `<figure>` line inside `<div class="sc-showcase">` in `index.html`. To add one, put the clip and its poster in `assets/clips/` (`g_<object>.mp4` and `g_<object>.jpg`), copy an existing line and change the file names, the `aria-label` and the task sentence. To remove one, delete its line; the grid picks its column count from the number of entries so that the rows stay even.
 
 ## Files
 

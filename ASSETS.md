@@ -32,6 +32,7 @@ Every clip renders the result that the corresponding paper figure draws (same ru
 | `mw_door`, `mw_knob`, `mw_doorknob`, `mw_keys` | one microwave shell, one run per task sentence, one camera and crop for the four clips; the buttons travel 2 mm | Fig. 11 |
 | `bulb` | helical joint on a SPARK+ result made from a photo of a light bulb in its socket: three turns and a 10.8 mm rise, textured as generated, same studio as the other clips | |
 | `sunflower`, `clock` | SPARK+ (joint types) | |
+| `g_<object>` | SPARK+ (gallery), from the pose of the photo to the goal of its task | |
 
 `car_input.jpg` and `mw_input.jpg` are the input images, cropped as in the paper figures.
 

@@ -21,7 +21,7 @@
 
   // Fade sections in as they reach the screen; without this script, or with reduced motion, everything is shown as is.
   if ('IntersectionObserver' in window && !reduceMotion) {
-    var parts = root.querySelectorAll('.sc-heading, .sc-wide-figure, .sc-abstract-copy, .sc-stage, .sc-results-head, .sc-results-row, .sc-task-row, .sc-motion-grid article, .sc-scroll, .sc-split > *');
+    var parts = root.querySelectorAll('.sc-heading, .sc-wide-figure, .sc-abstract-copy, .sc-stage, .sc-results-head, .sc-results-row, .sc-task-row, .sc-motion-grid article, .sc-scroll, .sc-split > *, .sc-showcase figure');
     var shown = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('sc-in'); shown.unobserve(e.target); }
