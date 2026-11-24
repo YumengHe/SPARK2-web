@@ -18,10 +18,6 @@ body{margin:0;font-family:Georgia,"Times New Roman",serif}
 #spark-clean .sc-heading > p{font-size:14px;color:var(--sc-muted);margin-top:14px;text-wrap:balance}
 #spark-clean .sc-abstract-copy{width:100%;margin:auto;font-size:16px;line-height:1.9;color:#595a64;text-align:justify}
 #spark-clean .sc-abstract-copy strong{color:var(--sc-ink);font-weight:500}
-#spark-clean .sc-idea-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:37px}
-#spark-clean .sc-idea{padding-top:15px;border-top:2px solid var(--tone)}
-#spark-clean .sc-idea h3{font-size:15px;line-height:1.5;font-weight:500;margin-bottom:6px}
-#spark-clean .sc-idea p{font-size:13px;color:var(--sc-muted);line-height:1.8}
 
 #spark-clean .sc-gallery-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid var(--sc-line);padding:9px 0 15px;margin-top:4px}
 #spark-clean .sc-task-text{font-size:17px;line-height:1.5;color:var(--sc-ink)}
@@ -53,7 +49,6 @@ body{margin:0;font-family:Georgia,"Times New Roman",serif}
 #spark-clean .sc-wide-figure.sc-video{margin-top:36px}
 #spark-clean .sc-wide-figure video{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
 #spark-clean .sc-spaced{margin-top:48px;margin-bottom:0}
-#spark-clean .sc-idea-row{margin-top:44px}
 #spark-clean .sc-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #spark-clean .sc-task-sentence{color:var(--sc-ink)!important;font-style:italic;font-weight:400!important;margin-right:0!important}
 #spark-clean .sc-gallery figure.sc-ours figcaption{color:#756baf}
@@ -82,7 +77,6 @@ body{margin:0;font-family:Georgia,"Times New Roman",serif}
  #spark-clean h1{font-size:30px;line-height:1.25;letter-spacing:-.6px}
  #spark-clean h2{font-size:28px}
  #spark-clean .sc-abstract-copy{font-size:14px;line-height:1.95;text-align:left}
- #spark-clean .sc-idea-row{grid-template-columns:1fr;gap:20px;margin-top:25px}
  #spark-clean .sc-heading{margin-bottom:28px}
  #spark-clean .sc-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 16px}
  #spark-clean .sc-results-head{display:none}
